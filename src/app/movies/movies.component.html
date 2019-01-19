@@ -1,0 +1,114 @@
+<style>
+#infoMiniTitle{
+text-align:center;
+}
+</style>
+<h2>
+    My Movies
+  </h2>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Edit Movie</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <input type="text" required [(ngModel)]="movie.Title" name="Title" #Title="ngModel" (change)=log(Title) placeholder="Title" class="form-control" autofocus>
+              
+              <div class="form-group">
+                <input type="number" [(ngModel)]="movie.Year" name="Year" placeholder="Year" class="form-control" autofocus>
+              </div>
+              <div class="form-group">
+                <input type="text" [(ngModel)]="movie.Runtime" name="Runtime"  placeholder="Runtime" class="form-control">
+              </div>
+              <div class="form-group">
+                <input type="text" [(ngModel)]="movie.Genre" name="Genre"  placeholder="Genre" class="form-control">
+              </div>
+              <div class="form-group">
+                <input type="text" [(ngModel)]="movie.Director" name="Director"  placeholder="Director" class="form-control">
+              </div>
+              <div class="form-group">
+                <input type="url" [(ngModel)]="movie.Poster" name="image URL"  placeholder="Poster" class="form-control">
+              </div>
+            </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" (click)="updateMovie(movie)" type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+
+
+
+
+
+
+    <div class="modal fade" id="movieInfo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="exampleModalLabel">{{movie.Title}}, <h5>{{movie.Year}}</h5></h4> 
+              <p id="infoMiniTitle"><span style="text-decoration: underline;">Runtime:</span><br/>{{movie.Runtime}}</p>
+              <p id="infoMiniTitle"><span style="text-decoration: underline;">Genre:</span><br/>{{movie.Genre}}</p>
+              <p id="infoMiniTitle"><span style="text-decoration: underline;">Director:</span><br/>{{movie.Director}}</p>
+
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="modal fade" id="deleteMovie" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Delete Movie</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                Are you sure?
+              </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                  <button type="submit" (click)="deleteMovie(movie.ID)" type="button" class="btn btn-primary" data-dismiss="modal">Yes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      
+    <div style="margin-top:10px;" class="col-md-3" *ngFor="let movie of movies">
+        <div class="card text-center">
+      <div>
+        <img  [src] class="card-img-top" [src]="movie.Poster">
+          <div class="centered"> {{movie.Title}}, {{movie.Year}} </div>
+      </div>
+          <div class="card-body">
+              <a style="color:white;" (click)="getMovie(movie.ID)" class="btn btn-info btn-block" data-toggle="modal" data-target="#movieInfo">
+                  INFO
+                </a>
+            <a style="color:white;" (click)="getMovie(movie.ID)" class="btn btn-warning btn-block" data-toggle="modal" data-target="#myModal">
+              EDIT MOVIE
+            </a>
+
+              <a style="color:white;" (click)="getMovie(movie.ID)" class="btn btn-danger btn-block" data-toggle="modal" data-target="#deleteMovie">
+                  DELETE
+                </a>
+          </div>
+        </div>
+      </div> 
