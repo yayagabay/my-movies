@@ -1,7 +1,9 @@
-import mysql from 'promise-mysql';
+// import mysql from 'promise-mysql';
+// var mysql = require('mysql');
 
 import keys from './keys';
 
+const mysql = require("promise-mysql");
 const pool = mysql.createPool(keys.database);
 
 pool.getConnection()
