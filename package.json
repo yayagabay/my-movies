@@ -3,16 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "start": "node server/build/index.js",
+    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "build": "next build",
-    "start": "next start -p $PORT",
-    "heroku-postbuild": "npm run build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yayagabay/my-movies.git"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {

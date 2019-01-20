@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc -w",
     "dev": "nodemon build/index.js",
-    "start": "node server/build/index.js"
+    "start": "next start -p $PORT",
+    "heroku-postbuild": "npm run build"
   },
   "keywords": [],
   "author": "",
