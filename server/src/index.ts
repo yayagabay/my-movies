@@ -34,15 +34,13 @@ class Server {
         // this.app.listen(process.env.PORT || 5000), () =>{
         //     console.log('Server on Port', this.app.get('port'));
         // };
-        var app     = express();
-        var express = require('express');
-        app.set('port', (process.env.PORT || 5000));
+        this.app.set('port', (process.env.PORT || 5000));
         //For avoidong Heroku $PORT error
-        app.get('/', function(request, response) {
+        this.app.get('/', function(request, response) {
         var result = 'App is running'
         response.send(result);
-        }).listen(app.get('port'), function() {
-        console.log('App is running, server is listening on port ', app.get('port'));
+        }).listen(this.app.get('port'), function() {
+        console.log('App is running, server is listening on port ', this.app.get('port'));
         });
 
 
