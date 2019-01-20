@@ -3,7 +3,6 @@ import morgan from 'morgan';
 import cors from 'cors';
 import indexRoutes from './routes/indexRoutes';
 import moviesRoutes from './routes/moviesRoutes';
-import checkRoutes from './routes/checkRoutes';
 
 
 class Server {
