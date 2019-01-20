@@ -7,7 +7,7 @@ import indexRoutes from './routes/indexRoutes';
 import moviesRoutes from './routes/moviesRoutes';
 
 class Server {
-    
+
     public app: Application;
 
     constructor(){
