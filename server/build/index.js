@@ -26,7 +26,7 @@ class Server {
         this.app.use('/api/movies', moviesRoutes_1.default);
     }
     start() {
-        this.app.listen(process.env.PORT || 5000), () => {
+        this.app.listen(process.env.PORT || 5000,"0.0.0.0"), () => {
             console.log('Server on Port', this.app.get('port'));
         };
     }
