@@ -8,10 +8,6 @@
     "dev": "nodemon build/index.js",
     "start": "npm run dev"
     },
-  "engines": {
-    "node": "10.15.0",
-    "npm": "6.4.1"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
