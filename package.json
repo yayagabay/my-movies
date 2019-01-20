@@ -10,6 +10,10 @@
     "start": "next start -p $PORT",
     "heroku-postbuild": "npm run build"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yayagabay/my-movies.git"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^7.2.0",
