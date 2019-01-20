@@ -1,12 +1,13 @@
-import express, {Application} from 'express';
+import { Application } from 'express';
+import * as express from 'express';
+
 import * as morgan from 'morgan';
 import * as cors from 'cors';
 import indexRoutes from './routes/indexRoutes';
 import moviesRoutes from './routes/moviesRoutes';
 
-
 class Server {
-
+    
     public app: Application;
 
     constructor(){
