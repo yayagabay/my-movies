@@ -6,10 +6,8 @@
   "scripts": {
     "build": "tsc -w",
     "dev": "nodemon build/index.js",
-    "prestart":"next build",
-    "start": "node index.js",
-    "postinstall": "ng build --aot -prod"
-  },
+    "start": "node index.js"
+    },
   "engines": {
     "node": "10.15.0",
     "npm": "6.4.1"
