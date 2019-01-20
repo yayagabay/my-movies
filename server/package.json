@@ -6,6 +6,7 @@
   "scripts": {
     "build": "tsc -w",
     "dev": "nodemon build/index.js",
+    "prestart": "npm install",
     "start": "node server/build/index.js"
   },
   "keywords": [],
