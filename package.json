@@ -3,12 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "prestart":"next build",
+    "prestart": "next build",
     "start": "node index.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --aot -prod"
   },
   "private": true,
   "dependencies": {
@@ -24,26 +25,29 @@
     "@theo4u/ng-alert": "^2.1.0",
     "bootstrap": "^4.2.1",
     "core-js": "^2.5.4",
+    "express": "^4.16.4",
     "mysql-promise": "^5.0.0",
+    "next": "2.0.0-beta.5",
     "ngx-bootstrap": "^3.1.4",
     "omdb": "^0.8.0",
     "open-iconic": "^1.1.1",
+    "path": "^0.12.7",
     "promise-mysql": "^3.3.1",
     "pusher-js": "^4.3.1",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
-    "zone.js": "~0.8.26",
-    "next": "2.0.0-beta.5"
+    "zone.js": "~0.8.26"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.12.0",
     "@angular/cli": "~7.2.1",
     "@angular/compiler-cli": "~7.2.0",
     "@angular/language-service": "~7.2.0",
-    "@types/node": "~8.9.4",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
     "codelyzer": "~4.5.0",
+    "enhanced-resolve": "^3.3.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~3.1.1",

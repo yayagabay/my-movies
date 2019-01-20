@@ -7,7 +7,12 @@
     "build": "tsc -w",
     "dev": "nodemon build/index.js",
     "prestart":"next build",
-    "start": "node index.js"
+    "start": "node index.js",
+    "postinstall": "ng build --aot -prod"
+  },
+  "engines": {
+    "node": "10.15.0",
+    "npm": "6.4.1"
   },
   "keywords": [],
   "author": "",
@@ -17,7 +22,8 @@
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "morgan": "^1.9.1",
-    "promise-mysql": "^3.3.1"
+    "promise-mysql": "^3.3.1",
+    "typescript": "~2.3.3"
   },
   "devDependencies": {
     "next": "2.0.0-beta.5",
