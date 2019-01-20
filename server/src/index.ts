@@ -1,6 +1,6 @@
 import express, {Application} from 'express';
-import morgan from 'morgan';
-import cors from 'cors';
+import * as morgan from 'morgan';
+import * as cors from 'cors';
 import indexRoutes from './routes/indexRoutes';
 import moviesRoutes from './routes/moviesRoutes';
 
