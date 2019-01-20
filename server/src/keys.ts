@@ -3,9 +3,9 @@ export default{
     
     database:{
             host: 'shifter.co.il',
-            user: 'shifter_yair',
+            user: 'shifterc_yair',
             password: 'vNV?gQV9YPV&',
-            database: 'shifter_mymovies'
+            database: 'shifterc_mymovies'
         // host: 'localhost',
         // user: 'root',
         // password: 'qwe123',
