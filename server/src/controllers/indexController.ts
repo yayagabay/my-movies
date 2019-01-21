@@ -13,11 +13,6 @@ class IndexController{
         res.json({text: 'API Is /api/movies'});
        }
     
-       public json(req: Request,res: Response){
-
-        let  { id } = req.params;
-        res.send(`hello, ${id}!`)
-           }
        
     public async checkExist(req: Request, res: Response): Promise<any> {
         let  { id } = req.params;

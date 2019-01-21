@@ -1,12 +1,14 @@
 import { Application } from 'express';
 // import * as express from 'express';
 import express = require('express');
-import morgan = require('morgan');
-import cors = require('cors');
-// import * as morgan from 'morgan';
+// import morgan = require('morgan');
+import cors from 'cors';
+import morgan from 'morgan';
 // import * as cors from 'cors';
 import indexRoutes from './routes/indexRoutes';
 import moviesRoutes from './routes/moviesRoutes';
+import { send } from 'q';
+const path = require('path');
 
 class Server {
 
@@ -28,11 +30,17 @@ class Server {
     }
 
     routes(): void{
-        this.app.use('/',indexRoutes);
+        
+        // this.app.use('/',indexRoutes);
+        this.app.use('/',express.static(__dirname +'/dist/uploadtoheroku'))
         this.app.use('/api/movies',moviesRoutes);
     }
-
+    
     start(): void{
+        
+        this.app.get('/*', function(req,res){
+            res.sendFile(path.join(__dirname+'/dist/uploadtoheroku/index.html'));
+        })
         this.app.listen(process.env.PORT || 5000), () =>{
             console.log('Server on Port', this.app.get('port'));
         };
