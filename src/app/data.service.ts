@@ -22,7 +22,7 @@ export class DataService {
     Imdbid: ''
   };
   // private _url: string = "/assets/data/movies.json";
-  API_URI = 'http://localhost:3000/api';
+  API_URI = '/api';
 
   constructor(private http: HttpClient,private router: Router) { }
 
