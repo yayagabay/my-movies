@@ -25,12 +25,12 @@ class Server {
     }
     routes() {
         // this.app.use('/',indexRoutes);
-        this.app.use(express.static('../dist/uploadtoheroku'));
+        this.app.use(express.static('/app/dist/uploadtoheroku'));
         this.app.use('/api/movies', moviesRoutes_1.default);
     }
     start() {
         this.app.get('/*', function (req, res) {
-            res.sendFile(path.join('../dist/uploadtoheroku/index.html'));
+            res.sendFile(path.join('/app/dist/uploadtoheroku/index.html'));
         });
         this.app.listen(process.env.PORT || 5000), () => {
             console.log('Server on Port', this.app.get('port'));
