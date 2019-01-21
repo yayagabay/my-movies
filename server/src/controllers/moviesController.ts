@@ -20,6 +20,7 @@ class MoviesController {
         res.status(404).json({ text: "The movie doesn't exits" });
     }
 
+
     public async create(req: Request, res: Response): Promise<void> {
         console.log(req.body)
         const result = await pool.query('INSERT INTO movies set ?', [req.body]);

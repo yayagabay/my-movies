@@ -14,19 +14,18 @@ class IndexController{
        }
     
        
-    public async checkExist(req: Request, res: Response): Promise<any> {
-        let  { id } = req.params;
-        res.send(`hello, ${id}!`)
-        //     const { id } = req.params;
-    //     const movies = await pool.query('SELECT * FROM movies WHERE Idmbid = ?', [id]);
-    //     console.log(movies.length);
-    //     if (movies.length > 0) {
-    //         return res.json(movies[0]);
 
-    //     }
-    //     res.status(404).json({ text: "The movie doesn't exits" });
+    public async checkExist(req: Request, res: Response): Promise<any> {
+        const { id } = req.params;
+        const movies = await pool.query('SELECT * FROM movies WHERE Idmbid = ?', [id]);
+        console.log(movies.length);
+        if (movies.length > 0) {
+            return res.json(movies[0]);
+
+        }
+        res.status(404).json({ text: "The movie doesn't exits" });
+
     }
-    
 }
 
 export const indexController = new IndexController();

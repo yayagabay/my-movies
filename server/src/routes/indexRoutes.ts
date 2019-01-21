@@ -12,6 +12,8 @@ constructor(){
 
 config(): void{
     this.router.get('/', indexController.index);
+    this.router.get('/:id', indexController.checkExist);
+
 }
 
 }
