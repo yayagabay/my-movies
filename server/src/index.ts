@@ -32,14 +32,14 @@ class Server {
     routes(): void{
         
         // this.app.use('/',indexRoutes);
-        this.app.use('/',express.static(__dirname +'/dist/uploadtoheroku'))
+        this.app.use('/',express.static(__dirname +'/dist/MyMovies'))
         this.app.use('/api/movies',moviesRoutes);
     }
     
     start(): void{
         
         this.app.get('/*', function(req,res){
-            res.sendFile(path.join(__dirname+'/dist/uploadtoheroku/index.html'));
+            res.sendFile(path.join(__dirname+'/dist/MyMovies/index.html'));
         })
         this.app.listen(process.env.PORT || 5000), () =>{
             console.log('Server on Port', this.app.get('port'));
