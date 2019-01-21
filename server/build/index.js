@@ -25,7 +25,7 @@ class Server {
     }
     routes() {
         // this.app.use('/',indexRoutes);
-        app.use(express.static(__dirname + '/dist/MyMovies'));
+        this.app.use(express.static(__dirname + '/dist/MyMovies'));
         this.app.use('/api/movies', moviesRoutes_1.default);
     }
     start() {
