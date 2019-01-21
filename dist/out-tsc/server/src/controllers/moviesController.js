@@ -42,7 +42,9 @@ var MoviesController = /** @class */ (function () {
             var result;
             return tslib_1.__generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, pool.query('INSERT INTO movies set ?', [req.body])];
+                    case 0:
+                        console.log(req.body);
+                        return [4 /*yield*/, pool.query('INSERT INTO movies set ?', [req.body])];
                     case 1:
                         result = _a.sent();
                         res.json({ message: 'Movie Saved' });

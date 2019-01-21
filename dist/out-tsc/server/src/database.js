@@ -1,4 +1,4 @@
-import mysql from 'mysql-promise';
+import * as mysql from 'promise-mysql';
 import keys from './keys';
 var pool = mysql.createPool(keys.database);
 pool.getConnection()
