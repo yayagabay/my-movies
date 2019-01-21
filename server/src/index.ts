@@ -1,8 +1,10 @@
 import { Application } from 'express';
-import * as express from 'express';
-
-import * as morgan from 'morgan';
-import * as cors from 'cors';
+// import * as express from 'express';
+import express = require('express');
+import morgan = require('morgan');
+import cors = require('cors');
+// import * as morgan from 'morgan';
+// import * as cors from 'cors';
 import indexRoutes from './routes/indexRoutes';
 import moviesRoutes from './routes/moviesRoutes';
 
@@ -31,17 +33,17 @@ class Server {
     }
 
     start(): void{
-        // this.app.listen(process.env.PORT || 5000), () =>{
-        //     console.log('Server on Port', this.app.get('port'));
-        // };
-        this.app.set('port', (process.env.PORT || 5000));
-        //For avoidong Heroku $PORT error
-        this.app.get('/', function(request, response) {
-        var result = 'App is running'
-        response.send(result);
-        }).listen(this.app.get('port'), function() {
-        console.log('App is running, server is listening on port ', this.app.get('port'));
-        });
+        this.app.listen(process.env.PORT || 5000), () =>{
+            console.log('Server on Port', this.app.get('port'));
+        };
+        // this.app.set('port', (process.env.PORT || 5000));
+        // //For avoidong Heroku $PORT error
+        // this.app.get('/', function(request, response) {
+        // var result = 'App is running'
+        // response.send(result);
+        // }).listen(this.app.get('port'), function() {
+        // console.log('App is running, server is listening on port ', this.app.get('port'));
+        // });
 
 
 
