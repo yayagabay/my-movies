@@ -35,7 +35,7 @@ class MoviesController {
 
     public async delete(req: Request, res: Response): Promise<void> {
         const { id } = req.params;
-        await pool.query('DELETE FROM movies WHERE ID = ?', [id]);
+        await pool.query('DELETE FROM movies WHERE Imdbid = ?', [id]);
         res.json({ message: "The movie was deleted" });
     }
 }
