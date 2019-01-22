@@ -87,7 +87,7 @@ saveMovie(string,id) {
       }     
         
 
-  updateMovie(id: string|number, updatedMovie: Movie): Observable<Movie> {
+  updateMovie(id: String|number, updatedMovie: Movie): Observable<Movie> {
     return this.http.put(`${this.API_URI}/movies/${id}`, updatedMovie);
   }
 
