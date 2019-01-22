@@ -48,7 +48,7 @@ class MoviesController {
     delete(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            yield database_1.default.query('DELETE FROM movies WHERE Imdb = ?', [id]);
+            yield database_1.default.query('DELETE FROM movies WHERE Imdbid = ?', [id]);
             res.json({ message: "The movie was deleted: " + id });
         });
     }
