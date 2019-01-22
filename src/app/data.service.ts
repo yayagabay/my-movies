@@ -34,16 +34,20 @@ export class DataService {
     return this.http.get(`${this.API_URI}/movies/${id}`);
   }
 
-  checkExist(id: String) {
+  checkExist(id: String){
     this.http.get(`${this.API_URI}/movies/checkexist/${id}`)
     .subscribe(
       res => {
-            console.log(res);
+        return false;
+        console.log(res);
             this.getMovies();
             this.router.navigate(['/home']);
   
           },
-          err => console.error(err)
+          err => {console.error(err)
+            return true;
+
+        }
         )
   }
 
@@ -53,10 +57,11 @@ export class DataService {
   }
 
 saveMovie(string,id) {
-  this.checkExist(id);
+  console.log(this.checkExist(id));
+
    let m:Movie = <Movie>JSON.stringify(string);
     console.log(string);
-    this.movie.Title=string.Title.replace(/[^a-zA-Z0-9]/g, "");
+    this.movie.Title=string.Title.replace(/[^a-zA-Z ]/g, "");
     this.movie.Year=string.Year;
     this.movie.Runtime=string.Runtime;
     this.movie.Genre=string.Genre;
