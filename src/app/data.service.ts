@@ -21,6 +21,8 @@ export class DataService {
     Poster: '',
     Imdbid: ''
   };
+  ID:String;
+
   // private _url: string = "/assets/data/movies.json";
   API_URI = '/api';
 
@@ -35,9 +37,12 @@ export class DataService {
   }
 
   checkExist(id: String){
+    this.ID=id;
     this.http.get(`${this.API_URI}/movies/checkexist/${id}`)
     .subscribe(
       res => {
+        console.log(res);
+        this.movie =res;
         return false;
         console.log(res);
             this.getMovies();

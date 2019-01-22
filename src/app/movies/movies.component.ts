@@ -19,7 +19,7 @@ export class MoviesComponent implements OnInit {
     Poster: '',
     Imdbid: ''
   };
-  ID:string;
+  ID:String;
   constructor(private dataService: DataService,private router: Router) { 
 
   }
@@ -40,7 +40,7 @@ export class MoviesComponent implements OnInit {
       );
   }
 
-  getMovie(id: string) {
+  getMovie(id: String) {
     this.dataService.getMovie(id)
       .subscribe(
         res => {
@@ -55,6 +55,7 @@ export class MoviesComponent implements OnInit {
   updateMovie(movie:Movie) {
     console.log(movie);
     movie.Title=movie.Title.replace(/[^a-zA-Z ]/g, "");
+    movie.Imdbid='';
     this.dataService.updateMovie(this.ID, movie)
       .subscribe(
         res => { 
