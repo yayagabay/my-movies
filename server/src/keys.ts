@@ -2,13 +2,13 @@ export default{
 
     
     database:{
-            host: 'shifter.co.il',
-            user: 'shifterc_yair',
-            password: 'L,6RHgeJr!8x',
-            database: 'shifterc_mymovies'
-        //     host: '127.0.0.1',
-        //     user: 'root',
-        // password: 'qwe123',
-        // database: 'ng_movies_db'
+        // host: 'shifter.co.il',
+        // user: 'shifterc_yair',
+        // password: 'L,6RHgeJr!8x',
+        // database: 'shifterc_mymovies'
+        host: 'eu-cdbr-west-02.cleardb.net',
+        user: 'bef4b626cabb10',
+    password: '9b71acbd',
+    database: 'heroku_e53464dcf7d289a'
     }
 }
