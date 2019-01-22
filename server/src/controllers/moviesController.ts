@@ -24,9 +24,9 @@ class MoviesController {
         const movies = await pool.query('SELECT * FROM movies WHERE Imdbid = ?', [id]);
         console.log(movies.length);
         if (movies.length > 0) {
-            return true;
+            res.status(404).json({ text: "The movie exits in the database" });
         }
-        return false;
+        return res.json(movies[0]);
     }
 
     public async create(req: Request, res: Response): Promise<void> {

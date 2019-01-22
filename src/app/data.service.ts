@@ -35,25 +35,25 @@ export class DataService {
   }
 
   checkExist(id: String) {
-    return this.http.get(`${this.API_URI}/movies/checkexist/${id}`);
+    this.http.get(`${this.API_URI}/movies/checkexist/${id}`)
+    .subscribe(
+      res => {
+            console.log(res);
+            this.getMovies();
+            this.router.navigate(['/home']);
+  
+          },
+          err => console.error(err)
+        )
   }
+
 
   deleteMovie(id: String) {
     return this.http.delete(`${this.API_URI}/movies/${id}`);
   }
 
 saveMovie(string,id) {
-  console.log(this.checkExist(id));
-  // .subscribe(
-  //   res => {
-  //         console.log(res);
-  //         this.getMovies();
-  //         this.router.navigate(['/home']);
-
-  //       },
-  //       err => console.error(err)
-  //     )
-  //   }
+  this.checkExist(id);
    let m:Movie = <Movie>JSON.stringify(string);
     console.log(string);
  this.movie.Title=string.Title;
