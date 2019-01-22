@@ -62,7 +62,7 @@ export class DataService {
   }
 
 saveMovie(string,id) {
-  console.log(this.checkExist(id));
+  this.checkExist(id);
 
    let m:Movie = <Movie>JSON.stringify(string);
     console.log(string);
