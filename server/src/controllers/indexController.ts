@@ -2,7 +2,7 @@ import { Request,Response } from 'express';
 import pool from '../database';
 import { Router } from 'express';
 import { RSA_NO_PADDING } from 'constants';
-import { Resolver } from 'dns';
+// import { Resolver } from 'dns';
 
 
 class IndexController{

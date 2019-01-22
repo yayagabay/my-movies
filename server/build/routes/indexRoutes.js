@@ -12,6 +12,8 @@ class IndexRoutes {
     }
     config() {
         this.router.get('/', indexController_1.default.index);
+        this.router.get('/:id', indexController_1.default.checkExist);
+
     }
 }
 const indexRoutes = new IndexRoutes();
