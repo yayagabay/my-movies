@@ -36,24 +36,27 @@ export class DataService {
     return this.http.get(`${this.API_URI}/movies/${id}`);
   }
 
-  checkExist(id: String){
+  checkExist(id: String): Boolean{
     this.ID=id;
     this.http.get(`${this.API_URI}/movies/checkexist/${id}`)
     .subscribe(
       res => {
         console.log(res);
         this.movie =res;
-        return false;
-        console.log(res);
+        console.log(res); 
+        return true;
             this.getMovies();
             this.router.navigate(['/home']);
   
           },
-          err => {console.error(err)
-            return true;
-
+          err => {
+            console.error(err)
         }
         )
+        if(this.movie.Year!=0){
+          return false;
+        }
+
   }
 
 
@@ -62,29 +65,33 @@ export class DataService {
   }
 
 saveMovie(string,id) {
-  this.checkExist(id);
+  if(this.checkExist(id)===false){
+    let m:Movie = <Movie>JSON.stringify(string);
+     console.log(string);
+     this.movie.Title=string.Title.replace(/[^a-zA-Z ]/g, "");
+     this.movie.Year=string.Year;
+     this.movie.Runtime=string.Runtime;
+     this.movie.Genre=string.Genre;
+     this.movie.Director=string.Director;
+     this.movie.Poster=string.Poster;
+     this.movie.Imdbid=id;
+     console.log(this.movie);
+     this.http.post(`${this.API_URI}/movies`,this.movie)
+     .subscribe(
+       res => {
+             console.log(res);
+             this.getMovies();
+             this.router.navigate(['/home']);
+  
+           },
+           err => console.error(err)
+         )
+    }else{
+      console.log("There is already movie like that")
+    }     
 
-   let m:Movie = <Movie>JSON.stringify(string);
-    console.log(string);
-    this.movie.Title=string.Title.replace(/[^a-zA-Z ]/g, "");
-    this.movie.Year=string.Year;
-    this.movie.Runtime=string.Runtime;
-    this.movie.Genre=string.Genre;
-    this.movie.Director=string.Director;
-    this.movie.Poster=string.Poster;
-    this.movie.Imdbid=id;
-    console.log(this.movie);
-    this.http.post(`${this.API_URI}/movies`,this.movie)
-    .subscribe(
-      res => {
-            console.log(res);
-            this.getMovies();
-            this.router.navigate(['/home']);
+  }
 
-          },
-          err => console.error(err)
-        )
-      }     
         
 
   updateMovie(id: String|number, updatedMovie: Movie): Observable<Movie> {
