@@ -30,6 +30,18 @@ class MoviesController {
             res.status(404).json({ text: "The movie doesn't exits" });
         });
     }
+
+    checkExist(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id } = req.params;
+            const movies = yield database_1.default.query('SELECT * FROM movies WHERE Imdbid = ?', [id]);
+            console.log(movies.length);
+            if (movies.length > 0) {
+                return res.json(movies[0]);
+            }
+            res.status(404).json({ text: "The movie doesn't exits" });
+        });
+    }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             console.log(req.body);

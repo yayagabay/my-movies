@@ -19,7 +19,15 @@ class MoviesController {
         }
         res.status(404).json({ text: "The movie doesn't exits" });
     }
-
+    public async checkExist(req: Request, res: Response): Promise<any> {
+        const { id } = req.params;
+        const movies = await pool.query('SELECT * FROM movies WHERE Imdbid = ?', [id]);
+        console.log(movies.length);
+        if (movies.length > 0) {
+            return res.json(movies[0]);
+        }
+        res.status(404).json({ text: "The movie doesn't exits" });
+    }
 
     public async create(req: Request, res: Response): Promise<void> {
         console.log(req.body)

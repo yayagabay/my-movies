@@ -15,19 +15,8 @@ class IndexController {
     }
     index(req, res) {
         res.json({ text: 'API Is /api/movies' });
-    }
-    checkExist(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            let { id } = req.params;
-                const { id } = req.params;
-                const movies = await pool.query('SELECT * FROM movies WHERE Idmbid = ?', [id]);
-                console.log(movies.length);
-                if (movies.length > 0) {
-                    return res.json(movies[0]);
-                }
-                res.status(404).json({ text: "The movie doesn't exits" });
-        });
-    }
-}
+ }
+ }
+   
 exports.indexController = new IndexController();
 exports.default = exports.indexController;
