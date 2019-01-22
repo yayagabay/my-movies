@@ -35,7 +35,7 @@ export class DataService {
   }
 
   checkExist(id: String) {
-    return this.http.get(`${this.API_URI}/movies/check/${id}`);
+    return this.http.get(`${this.API_URI}/movies/checkexist/${id}`);
   }
 
   deleteMovie(id: String) {
@@ -43,8 +43,18 @@ export class DataService {
   }
 
 saveMovie(string,id) {
-    this.checkExist(id);
-    let m:Movie = <Movie>JSON.stringify(string);
+  console.log(this.checkExist(id));
+  // .subscribe(
+  //   res => {
+  //         console.log(res);
+  //         this.getMovies();
+  //         this.router.navigate(['/home']);
+
+  //       },
+  //       err => console.error(err)
+  //     )
+  //   }
+   let m:Movie = <Movie>JSON.stringify(string);
     console.log(string);
  this.movie.Title=string.Title;
     this.movie.Year=string.Year;

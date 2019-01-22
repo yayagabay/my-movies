@@ -37,9 +37,9 @@ class MoviesController {
             const movies = yield database_1.default.query('SELECT * FROM movies WHERE Imdbid = ?', [id]);
             console.log(movies.length);
             if (movies.length > 0) {
-                return res.json(movies[0]);
+                return true;
             }
-            res.status(404).json({ text: "The movie doesn't exits" });
+            return false;
         });
     }
     create(req, res) {
