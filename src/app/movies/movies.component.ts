@@ -72,6 +72,7 @@ export class MoviesComponent implements OnInit {
         res => {
           console.log(res);
           this.getMovies();
+          this.router.navigate(['/home']);
         },
         err => console.error(err)
       )
