@@ -73,11 +73,11 @@ saveMovie(string,id) {
 
 
   getMovieFromOmdb(id: String): Observable<Movie[]>{
-    return this.http.get<Movie[]>(`http://www.omdbapi.com/?i=${id}&apikey=a83332e8`);
+    return this.http.get<Movie[]>(`https://www.omdbapi.com/?i=${id}&apikey=a83332e8`);
   }
 
   searchMovieByTitle(title: String): Observable<Movie[]>{
-    return this.http.get<Movie[]>(`http://www.omdbapi.com/?s=${title}&apikey=a83332e8`);
+    return this.http.get<Movie[]>(`https://www.omdbapi.com/?s=${title}&apikey=a83332e8`);
   }
 
 
