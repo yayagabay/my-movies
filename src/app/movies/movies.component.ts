@@ -54,6 +54,7 @@ export class MoviesComponent implements OnInit {
 
   updateMovie(movie:Movie) {
     console.log(movie);
+    movie.Title=movie.Title.replace(/[^a-zA-Z ]/g, "");
     this.dataService.updateMovie(this.ID, movie)
       .subscribe(
         res => { 
