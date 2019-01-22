@@ -56,7 +56,7 @@ saveMovie(string,id) {
   this.checkExist(id);
    let m:Movie = <Movie>JSON.stringify(string);
     console.log(string);
- this.movie.Title=string.Title;
+    this.movie.Title=string.Title.replace(/[^a-zA-Z ]/g, "");
     this.movie.Year=string.Year;
     this.movie.Runtime=string.Runtime;
     this.movie.Genre=string.Genre;
