@@ -52,6 +52,8 @@ export class DataService {
             this.getMovies();
             this.router.navigate(['/home']);
             console.error(err);
+            console.log("This movie already in my movie!")
+
           }
           )
           return false;
@@ -64,11 +66,7 @@ export class DataService {
   }
 
 saveMovie(string,id) {
-  if(this.checkExist(id)===false){
-    console.log("This movie already in my movie!")
-  }else{
-
-  
+  if(this.checkExist(id)===true){
   // console.log(this.checkExist(id));
     let m:Movie = <Movie>JSON.stringify(string);
      console.log(string);
