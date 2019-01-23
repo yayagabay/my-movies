@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Movie } from './models/Movie';
-import { Observable, pipe } from 'rxjs';
+import { Observable , pipe } from 'rxjs';
 import { map } from "rxjs/operators";
 import moviesController from 'server/src/controllers/moviesController';
 import { TypeaheadOptions } from 'ngx-bootstrap';
 import { Router, ActivatedRoute } from '@angular/router';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
+// import { Observable } from 'rxjs/Observable';
 
 @Injectable({
   providedIn: 'root'
