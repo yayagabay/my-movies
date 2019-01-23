@@ -48,9 +48,6 @@ export class MovieSearchComponent implements OnInit {
             res => {
              this.dataService.saveMovie(res,id);
         })
-      }else{
-        this.errorMsg.message="This Movie Exist in my movies!";
-        console.log(this.errorMsg.message);
       }
       }   
     }
