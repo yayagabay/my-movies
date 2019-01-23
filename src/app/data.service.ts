@@ -64,9 +64,8 @@ export class DataService {
   }
 
 saveMovie(string,id) {
-  console.log(this.checkExist(id));
-  if(this.checkExist(id)===true){
-  // console.log(this.checkExist(id));
+  this.checkExist(id);
+    console.log(this.exist);
     let m:Movie = <Movie>JSON.stringify(string);
      console.log(string);
      this.movie.Title=string.Title.replace(/[^a-zA-Z ]/g, "");
@@ -88,9 +87,7 @@ saveMovie(string,id) {
            err => console.error(err)
          )
     } 
-
-
-  }      
+      
 
   updateMovie(id: String|number, updatedMovie: Movie): Observable<Movie> {
     return this.http.put(`${this.API_URI}/movies/${id}`, updatedMovie);
