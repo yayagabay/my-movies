@@ -49,7 +49,7 @@ export class DataService {
         // this.router.navigate(['/home']);
           },
           err => {
-            console.log(err.data);
+            this.errorMsg="This movie exist in my movie!";
             // this.getMovies();
             // this.router.navigate(['/home']);
             // console.error(err);
