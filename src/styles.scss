@@ -27,11 +27,8 @@ body {
     text-align: center;
     padding: 5px;
   }
-  .bottom-left {
-    position: absolute;
-    top: 50px;
-    text-align: center;
-    width: 100%;
+  .card-body{
+      padding:0.5rem;
   }
 #title{
     font-weight: bolder;
