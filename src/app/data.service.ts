@@ -37,7 +37,7 @@ export class DataService {
     return this.http.get(`${this.API_URI}/movies/${id}`);
   }
 
-  checkExist(id: String): Boolean{
+  checkExist(id: String): string{
     this.ID=id;
     console.log(id);
     this.http.get(`${this.API_URI}/movies/checkexist/${id}`)
@@ -46,7 +46,6 @@ export class DataService {
         console.log(res);
         // this.getMovies();
         // this.router.navigate(['/home']);
-        this.exist=true;  
           },
           err => {
             console.log(err.text);
@@ -55,10 +54,9 @@ export class DataService {
             // this.router.navigate(['/home']);
             // console.error(err);
             // console.log("This movie already in my movie!"
-            this.exist=false;
           }
           )
-          return this.exist;
+          return this.errorMsg;
 
   }
 
