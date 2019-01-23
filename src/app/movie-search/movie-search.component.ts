@@ -24,6 +24,7 @@ export class MovieSearchComponent implements OnInit {
   movies: any = [];
   title: string;
   results: Object;
+  public errorMsg;
 
   searchMovie(title: String){
     this.dataService.searchMovieByTitle(title).subscribe(data => this.movies = data);
