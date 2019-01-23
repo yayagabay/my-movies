@@ -22,7 +22,7 @@ export class DataService {
     Imdbid: ''
   };
   ID:String;
-
+  exist:Boolean;
   // private _url: string = "/assets/data/movies.json";
   API_URI = '/api';
 
@@ -41,22 +41,20 @@ export class DataService {
     console.log(id);
     this.http.get(`${this.API_URI}/movies/checkexist/${id}`)
     .subscribe(
-      res => {
-        
+      res => {  
         this.getMovies();
         this.router.navigate(['/home']);
-        return true;
-  
+        this.exist=true;  
           },
           err => {
             this.getMovies();
             this.router.navigate(['/home']);
             console.error(err);
             console.log("This movie already in my movie!")
-
+            this.exist=false;
           }
           )
-          return false;
+          return this.exist;
 
   }
 
