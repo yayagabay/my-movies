@@ -43,12 +43,12 @@ export class DataService {
     this.http.get(`${this.API_URI}/movies/checkexist/${id}`)
     .subscribe(
       res => {
-        console.log(res.toString);
+        // console.log(res.toSt);
         // this.getMovies();
         // this.router.navigate(['/home']);
           },
           err => {
-            console.log(err);
+            console.log(err.error);
             this.errorMsg=err;
             // this.getMovies();
             // this.router.navigate(['/home']);
