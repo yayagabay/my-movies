@@ -43,9 +43,9 @@ export class DataService {
     .subscribe(
       res => {
         console.log(res); 
+        this.getMovies();
+        this.router.navigate(['/home']);
         return true;
-            this.getMovies();
-            this.router.navigate(['/home']);
   
           },
           err => {
