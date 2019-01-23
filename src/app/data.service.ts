@@ -48,7 +48,6 @@ export class DataService {
         // this.router.navigate(['/home']);
           },
           err => {
-            console.log(err.error);
             this.errorMsg=err;
             // this.getMovies();
             // this.router.navigate(['/home']);
