@@ -42,8 +42,6 @@ export class DataService {
     this.http.get(`${this.API_URI}/movies/checkexist/${id}`)
     .subscribe(
       res => {
-        console.log(res);
-        this.movie =res;
         console.log(res); 
         return true;
             this.getMovies();
@@ -51,13 +49,12 @@ export class DataService {
   
           },
           err => {
+            this.getMovies();
             this.router.navigate(['/home']);
             console.error(err);
-        }
-        )
-        if(this.movie.Year!=0){
+          }
+          )
           return false;
-        }
 
   }
 
