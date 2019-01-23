@@ -98,14 +98,16 @@ padding:10px;
       <div>
         <img  [src] class="card-img-top" [src]="movie.Poster">
           <div class="centered"> {{movie.Title | titlecase}}, {{movie.Year}} </div>
+          <div class="bottom-left"> 
+            <i  style="color: #6cc3d5;"data-toggle="modal" data-target="#movieInfo" (click)="getMovie(movie.ID)" class="material-icons">
+              info
+              </i>
+          </div>
       </div>
           <div class="card-body">
               <a style="color:white;" (click)="getMovie(movie.ID)" class="btn btn-info btn-block" data-toggle="modal" data-target="#movieInfo">
                   INFO
                 </a>
-                <i data-toggle="modal" data-target="#movieInfo" (click)="getMovie(movie.ID)" class="material-icons">
-                  info
-                  </i>
             <a style="color:white;" (click)="getMovie(movie.ID)" class="btn btn-warning btn-block" data-toggle="modal" data-target="#myModal">
               EDIT MOVIE
             </a>
