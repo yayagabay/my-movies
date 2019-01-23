@@ -4,7 +4,7 @@ USE ng_movies_db;
 
 CREATE TABLE movie(
     ID INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    Title VARCHAR(180),
+    Title VARCHAR(180) UNIQUE,
     Year INTEGER,
     Runtime VARCHAR(100),
     Genre VARCHAR(500),

@@ -30,7 +30,7 @@ export class MovieSearchComponent implements OnInit {
     console.log(this.movies);
   }
 
-  constructor(private dataService: DataService, private activatedRoute: ActivatedRoute) { }
+  constructor(private dataService: DataService, private activatedRoute: ActivatedRoute,private router: Router) { }
 
   ngOnInit() {
     this.dataService.getMovies().subscribe(
@@ -44,7 +44,11 @@ export class MovieSearchComponent implements OnInit {
       res => {
         this.dataService.saveMovie(res,id);
           },
-          err => console.error(err)
+          err => {console.error(err)
+            this.dataService.getMovies();
+            this.router.navigate(['/home']);
+          }
+
         )
       }   
     }
