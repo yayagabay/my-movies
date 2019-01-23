@@ -41,13 +41,11 @@ export class MovieSearchComponent implements OnInit {
 
 
 
-  addMovie(id){
-    this.errorMsg=this.dataService.checkExist(id);
-    if(this.errorMsg.message=="good"){
+  addMovie(id){  
         this.dataService.getMovieFromOmdb(id).subscribe(
             res => {
              this.dataService.saveMovie(res,id);
         })
       }
       }   
-    }
+    
