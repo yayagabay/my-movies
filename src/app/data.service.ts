@@ -46,7 +46,7 @@ export class DataService {
         console.log(res);
         // this.getMovies();
         // this.router.navigate(['/home']);
-        // this.exist=true;  
+        this.exist=true;  
           },
           err => {
             console.log(err.text);
@@ -55,7 +55,7 @@ export class DataService {
             // this.router.navigate(['/home']);
             // console.error(err);
             // console.log("This movie already in my movie!"
-            // this.exist=false;
+            this.exist=false;
           }
           )
           return this.exist;
@@ -68,7 +68,6 @@ export class DataService {
   }
 
 saveMovie(string,id) {
-  this.checkExist(id);
     let m:Movie = <Movie>JSON.stringify(string);
     //  console.log(string);
      this.movie.Title=string.Title.replace(/[^a-zA-Z ]/g, "");

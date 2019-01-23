@@ -41,6 +41,8 @@ export class MovieSearchComponent implements OnInit {
 
 
   addMovie(id){
+    console.log(this.dataService.checkExist(id));
+
     this.dataService.getMovieFromOmdb(id).subscribe(
       res => {
         this.dataService.saveMovie(res,id);
