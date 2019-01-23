@@ -19,7 +19,7 @@ export class MoviesComponent implements OnInit {
     Poster: '',
     Imdbid: ''
   };
-  ID:String;
+  ID:string;
   constructor(private dataService: DataService,private router: Router) { 
 
   }
@@ -40,7 +40,7 @@ export class MoviesComponent implements OnInit {
       );
   }
 
-  getMovie(id: String) {
+  getMovie(id: string) {
     this.dataService.getMovie(id)
       .subscribe(
         res => {
