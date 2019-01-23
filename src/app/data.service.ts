@@ -38,6 +38,7 @@ export class DataService {
 
   checkExist(id: String): Boolean{
     this.ID=id;
+    console.log(id);
     this.http.get(`${this.API_URI}/movies/checkexist/${id}`)
     .subscribe(
       res => {
@@ -65,7 +66,7 @@ export class DataService {
   }
 
 saveMovie(string,id) {
-  if(this.checkExist(id)===false){
+  console.log(this.checkExist(id));
     let m:Movie = <Movie>JSON.stringify(string);
      console.log(string);
      this.movie.Title=string.Title.replace(/[^a-zA-Z ]/g, "");
@@ -86,11 +87,8 @@ saveMovie(string,id) {
            },
            err => console.error(err)
          )
-    }else{
-      console.log("There is already movie like that")
-    }     
+    } 
 
-  }
 
         
 
