@@ -81,7 +81,12 @@ saveMovie(string,id) {
             this.getMovies();
             this.router.navigate(['/home']);
             
-          }
+          },
+           err => {
+            // console.error(err)
+          //  this.getMovies();
+          //  this.router.navigate(['/home']);
+           }
          )
     } 
       
