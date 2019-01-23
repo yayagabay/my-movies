@@ -4,6 +4,7 @@ import { DataService } from '../data.service';
 import { Movie } from '../models/Movie';
 import { Router, ActivatedRoute } from '@angular/router';
 import { tap, catchError } from 'rxjs/operators';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 
 @Component({
@@ -42,13 +43,13 @@ export class MovieSearchComponent implements OnInit {
 
   addMovie(id){
     this.errorMsg=this.dataService.checkExist(id);
-    console.log(this.errorMsg.message);
-    
-    // this.dataService.getMovieFromOmdb(id).subscribe(
-      // res => {
-      //   this.dataService.saveMovie(res,id);
-      //     }
-
-        // )
+    if(this.errorMsg!="good"){
+        this.dataService.getMovieFromOmdb(id).subscribe(
+            res => {
+             this.dataService.saveMovie(res,id);
+        })
+      }
+      this.errorMsg="This Movie Exist in my movies!";
+      console.log(this.errorMsg.message);
       }   
     }
