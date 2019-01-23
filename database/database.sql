@@ -10,7 +10,7 @@ CREATE TABLE movie(
     Genre VARCHAR(500),
     Director VARCHAR(100),
     Poster VARCHAR(500),
-    Imdbid VARCHAR(100)
+    Imdbid VARCHAR(100) UNIQUE
     );
 
 RENAME TABLE movie to movies;

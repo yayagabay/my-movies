@@ -24,8 +24,7 @@ export class MovieSearchComponent implements OnInit {
   movies: any = [];
   title: string;
   results: Object;
- exist:Boolean;
- 
+
   searchMovie(title: String){
     this.dataService.searchMovieByTitle(title).subscribe(data => this.movies = data);
     console.log(this.movies);
@@ -41,10 +40,6 @@ export class MovieSearchComponent implements OnInit {
 
 
   addMovie(id){
-    this.movie.Imdbid=id;
-    this.exist=this.dataService.checkExist(id)
-    console.log(this.exist);
-
     this.dataService.getMovieFromOmdb(id).subscribe(
       res => {
         this.dataService.saveMovie(res,id);
