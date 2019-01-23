@@ -25,6 +25,7 @@ export class DataService {
   exist:Boolean;
   // private _url: string = "/assets/data/movies.json";
   API_URI = '/api';
+  public errorMsg;
 
   constructor(private http: HttpClient,private router: Router) { }
 
@@ -48,9 +49,8 @@ export class DataService {
         // this.exist=true;  
           },
           err => {
-            console.log(err);
-            console.error(err);
-
+            console.log(err.text);
+            this.errorMsg=err.text;
             // this.getMovies();
             // this.router.navigate(['/home']);
             // console.error(err);
