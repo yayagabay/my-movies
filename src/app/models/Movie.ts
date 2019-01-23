@@ -1,11 +1,11 @@
 import { Title } from '@angular/platform-browser';
 
 export interface Movie {
-    Title?: string,
+    Title?: String,
     Year?: number,
-    Runtime?: string,
-    Genre?: string,
-    Director?: string,
-    Poster?: string,
-    Imdbid?: string
+    Runtime?: String,
+    Genre?: String,
+    Director?: String,
+    Poster?: String,
+    Imdbid?: String
 };
