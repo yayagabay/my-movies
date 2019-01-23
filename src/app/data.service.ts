@@ -65,7 +65,7 @@ export class DataService {
 
 saveMovie(string,id) {
     let m:Movie = <Movie>JSON.stringify(string);
-     console.log(string);
+    //  console.log(string);
      this.movie.Title=string.Title.replace(/[^a-zA-Z ]/g, "");
      this.movie.Year=string.Year;
      this.movie.Runtime=string.Runtime;
@@ -73,11 +73,11 @@ saveMovie(string,id) {
      this.movie.Director=string.Director;
      this.movie.Poster=string.Poster;
      this.movie.Imdbid=id;
-     console.log(this.movie);
+    //  console.log(this.movie);
      this.http.post(`${this.API_URI}/movies`,this.movie)
      .subscribe(
        res => {
-             console.log(res);
+            //  console.log(res);
              this.getMovies();
              this.router.navigate(['/home']);
   
