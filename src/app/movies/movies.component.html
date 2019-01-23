@@ -96,21 +96,21 @@ padding:10px;
     <div style="margin-top:10px;" class="col-md-3" *ngFor="let movie of movies">
         <div class="card text-center">
           <div class="bottom-left"> 
-            <button>
+            <a class="btn btn-info">
               <i style="color: #6cc3d5;" data-toggle="modal" data-target="#movieInfo" (click)="getMovie(movie.ID)" class="material-icons">
                   info
                 </i>
-              </button>
-              <button>
-                <i style="color: #ffce67;" data-toggle="modal" data-target="#myModal" (click)="getMovie(movie.ID)" class="material-icons">
+              </a>
+              <a class="btn btn-primary">
+                  <i style="color: #ffce67;" data-toggle="modal" data-target="#myModal" (click)="getMovie(movie.ID)" class="material-icons">
                     create
                   </i>
-                </button>
-                <button>
-                  <i style="color: #ff7851;" data-toggle="modal" data-target="#deleteMovie" (click)="getMovie(movie.ID)" class="material-icons">
+                </a>
+                <a class="btn btn-danger">
+                    <i style="color: #ff7851;" data-toggle="modal" data-target="#deleteMovie" (click)="getMovie(movie.ID)" class="material-icons">
                       delete
                     </i>
-                  </button>
+                  </a>
                 </div>
         <div>
         <img  [src] class="card-img-top" [src]="movie.Poster">
