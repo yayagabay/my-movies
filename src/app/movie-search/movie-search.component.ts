@@ -40,11 +40,12 @@ export class MovieSearchComponent implements OnInit {
   checkExist(id){
     this.dataService.getMovies().subscribe(
       res => {
-        for(var i=0;i<this.movies.length; i++){
-          console.log(this.movies[i].Title);
-        }
-      })
-}
+
+          console.log(this.movies[0].Title);
+
+    })
+  }
+
 
   addMovie(id){
     this.checkExist(id);
