@@ -43,7 +43,7 @@ export class DataService {
     .subscribe(
       res => {
         console.log(res);
-        this.errorMsg=res;
+        this.errorMsg.messeage="good";
 
         // this.getMovies();
         // this.router.navigate(['/home']);
