@@ -91,9 +91,10 @@ padding:10px;
           </div>
         </div>
       </div>
-    
       
-    <div style="margin-top:10px;" class="col-md-3" *ngFor="let movie of movies">
+      
+      <div style="margin-top:10px;" class="col-md-3" *ngFor="let movie of movies">
+        <div class="card text-center">
         <div class="bottom-left"> 
           <a class="btn btn-info">
             <i style="color: #6cc3d5;" data-toggle="modal" data-target="#movieInfo" (click)="getMovie(movie.ID)" class="material-icons">
@@ -111,7 +112,6 @@ padding:10px;
                   </i>
                 </a>
               </div>
-        <div class="card text-center">
           <img  [src] class="card-img-top" [src]="movie.Poster">
           <div class="centered"> {{movie.Title | titlecase}}, {{movie.Year}} </div>
         <div>
