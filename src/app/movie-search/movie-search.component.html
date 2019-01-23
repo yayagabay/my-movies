@@ -6,7 +6,9 @@ Search New Movie
   <button type="submit" style="margin-top:10px;" (click)="searchMovie(title)" 
   class="btn btn-success btn-block">Search</button>
 </form>
-
+<div class="alert alert-warning" role="alert">
+    {{errorMsg.message}}
+  </div>
 <div style="margin-top:10px;" class="col-md-3" *ngFor="let movie of movies.Search">
   <div class="card text-center">
 <div>
@@ -18,7 +20,7 @@ Search New Movie
         ADD TO MY MOVIES
       </a>
     </div>
-    {{errorMsg.message}}
+
   </div>
 </div> 
 
