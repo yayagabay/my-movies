@@ -6,7 +6,8 @@ import { map } from "rxjs/operators";
 import moviesController from 'server/src/controllers/moviesController';
 import { TypeaheadOptions } from 'ngx-bootstrap';
 import { Router, ActivatedRoute } from '@angular/router';
-
+import 'rxjs/add/operator/catch';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -29,8 +30,8 @@ export class DataService {
 
   constructor(private http: HttpClient,private router: Router) { }
 
-  getMovies() {
-    return this.http.get(`${this.API_URI}/movies`);
+  getMovies(){
+    return this.http.get<Movie[]>(`${this.API_URI}/movies`);
   }
 
   getMovie(id: String) {
