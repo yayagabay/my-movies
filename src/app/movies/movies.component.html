@@ -100,17 +100,17 @@ padding:10px;
           <div class="centered"> {{movie.Title | titlecase}}, {{movie.Year}} </div>
         </div>
         <div class="card-body">
-            <a class="btn btn-info" data-toggle="modal" data-target="#movieInfo" (click)="getMovie(movie.ID)">
+            <a style="margin-left:10px;" class="btn btn-info" data-toggle="modal" data-target="#movieInfo" (click)="getMovie(movie.ID)">
               <i style="color: white;" class="material-icons">
                   info
                 </i>
               </a>
-              <a class="btn btn-primary" data-toggle="modal" data-target="#myModal" (click)="getMovie(movie.ID)"> 
+              <a style="margin-left:10px;" class="btn btn-primary" data-toggle="modal" data-target="#myModal" (click)="getMovie(movie.ID)"> 
                 <i style="color: white;" class="material-icons">
                     create
                   </i>
                 </a>
-                <a class="btn btn-danger" data-toggle="modal" data-target="#deleteMovie" (click)="getMovie(movie.ID)">
+                <a style="margin-left:10px;" class="btn btn-danger" data-toggle="modal" data-target="#deleteMovie" (click)="getMovie(movie.ID)">
                   <i style="color: white;" class="material-icons">
                       delete
                     </i>
