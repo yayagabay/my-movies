@@ -36,27 +36,31 @@ export class DataService {
     return this.http.get(`${this.API_URI}/movies/${id}`);
   }
 
-  // checkExist(id: String): Boolean{
-  //   this.ID=id;
-  //   console.log(id);
-  //   this.http.get(`${this.API_URI}/movies/checkexist/${id}`)
-  //   .subscribe(
-  //     res => {
-  //       this.getMovies();
-  //       this.router.navigate(['/home']);
-  //       this.exist=true;  
-  //         },
-  //         err => {
-  //           this.getMovies();
-  //           this.router.navigate(['/home']);
-  //           console.error(err);
-  //           console.log("This movie already in my movie!"
-  //           this.exist=false;
-  //         }
-  //         )
-  //         return this.exist;
+  checkExist(id: String): Boolean{
+    this.ID=id;
+    console.log(id);
+    this.http.get(`${this.API_URI}/movies/checkexist/${id}`)
+    .subscribe(
+      res => {
+        console.log(res);
+        // this.getMovies();
+        // this.router.navigate(['/home']);
+        // this.exist=true;  
+          },
+          err => {
+            console.log(err);
+            console.error(err);
 
-  // }
+            // this.getMovies();
+            // this.router.navigate(['/home']);
+            // console.error(err);
+            // console.log("This movie already in my movie!"
+            // this.exist=false;
+          }
+          )
+          return this.exist;
+
+  }
 
 
   deleteMovie(id: String) {
