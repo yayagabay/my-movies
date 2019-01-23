@@ -94,27 +94,27 @@ padding:10px;
     
       
     <div style="margin-top:10px;" class="col-md-3" *ngFor="let movie of movies">
-        <div class="card text-center">
-          <div class="bottom-left"> 
-            <a class="btn btn-info">
-              <i style="color: #6cc3d5;" data-toggle="modal" data-target="#movieInfo" (click)="getMovie(movie.ID)" class="material-icons">
-                  info
+        <div class="bottom-left"> 
+          <a class="btn btn-info">
+            <i style="color: #6cc3d5;" data-toggle="modal" data-target="#movieInfo" (click)="getMovie(movie.ID)" class="material-icons">
+                info
+              </i>
+            </a>
+            <a class="btn btn-primary">
+                <i style="color: #ffce67;" data-toggle="modal" data-target="#myModal" (click)="getMovie(movie.ID)" class="material-icons">
+                  create
                 </i>
               </a>
-              <a class="btn btn-primary">
-                  <i style="color: #ffce67;" data-toggle="modal" data-target="#myModal" (click)="getMovie(movie.ID)" class="material-icons">
-                    create
+              <a class="btn btn-danger">
+                  <i style="color: #ff7851;" data-toggle="modal" data-target="#deleteMovie" (click)="getMovie(movie.ID)" class="material-icons">
+                    delete
                   </i>
                 </a>
-                <a class="btn btn-danger">
-                    <i style="color: #ff7851;" data-toggle="modal" data-target="#deleteMovie" (click)="getMovie(movie.ID)" class="material-icons">
-                      delete
-                    </i>
-                  </a>
-                </div>
-        <div>
-        <img  [src] class="card-img-top" [src]="movie.Poster">
+              </div>
+        <div class="card text-center">
+          <img  [src] class="card-img-top" [src]="movie.Poster">
           <div class="centered"> {{movie.Title | titlecase}}, {{movie.Year}} </div>
+        <div>
       </div>
           <!-- <div class="card-body">
               <a style="color:white;" (click)="getMovie(movie.ID)" class="btn btn-info btn-block" data-toggle="modal" data-target="#movieInfo">
