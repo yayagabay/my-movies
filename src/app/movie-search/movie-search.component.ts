@@ -37,18 +37,9 @@ export class MovieSearchComponent implements OnInit {
       res => this.movies = res);
   }
 
-  checkExist(id){
-    this.dataService.getMovies().subscribe(
-      res => {
-
-          console.log(this.movies[0].Title);
-
-    })
-  }
 
 
   addMovie(id){
-    this.checkExist(id);
     this.movie.Imdbid=id;
     this.dataService.getMovieFromOmdb(id).subscribe(
       res => {

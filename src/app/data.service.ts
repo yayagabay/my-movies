@@ -51,7 +51,8 @@ export class DataService {
   
           },
           err => {
-            console.error(err)
+            this.router.navigate(['/home']);
+            console.error(err);
         }
         )
         if(this.movie.Year!=0){
