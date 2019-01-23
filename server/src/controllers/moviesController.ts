@@ -26,7 +26,7 @@ class MoviesController {
         if (movies.length > 0) {
             res.status(404).json({ text: "The movie exits" });
         }
-            return true;
+        res.json({ message: 'good' });
     }
 
     public async create(req: Request, res: Response): Promise<void> {
