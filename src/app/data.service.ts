@@ -50,7 +50,7 @@ export class DataService {
   //           this.getMovies();
   //           this.router.navigate(['/home']);
   //           console.error(err);
-  //           console.log("This movie already in my movie!")
+  //           console.log("This movie already in my movie!"
   //           this.exist=false;
   //         }
   //         )
@@ -81,11 +81,7 @@ saveMovie(string,id) {
             this.getMovies();
             this.router.navigate(['/home']);
             
-          },
-           err => {console.error(err)
-           this.getMovies();
-           this.router.navigate(['/home']);
-           }
+          }
          )
     } 
       
