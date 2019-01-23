@@ -24,7 +24,7 @@ export class DataService {
   exist:Boolean;
   // private _url: string = "/assets/data/movies.json";
   API_URI = '/api';
-  public errorMsg;
+  errorMsg: any = [];
 
   constructor(private http: HttpClient,private router: Router) { }
 
