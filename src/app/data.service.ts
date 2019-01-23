@@ -42,7 +42,7 @@ export class DataService {
     this.http.get(`${this.API_URI}/movies/checkexist/${id}`)
     .subscribe(
       res => {
-        console.log(res); 
+        
         this.getMovies();
         this.router.navigate(['/home']);
         return true;
@@ -66,6 +66,7 @@ export class DataService {
   }
 
 saveMovie(string,id) {
+  console.log(this.checkExist(id));
   if(this.checkExist(id)===true){
   // console.log(this.checkExist(id));
     let m:Movie = <Movie>JSON.stringify(string);
