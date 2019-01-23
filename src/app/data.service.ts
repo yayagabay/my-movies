@@ -41,7 +41,9 @@ export class DataService {
     console.log(id);
     this.http.get(`${this.API_URI}/movies/checkexist/${id}`)
     .subscribe(
-      res => {  
+      res => {
+        this.movie=res;
+        console.log(this.movie); 
         this.getMovies();
         this.router.navigate(['/home']);
         this.exist=true;  
