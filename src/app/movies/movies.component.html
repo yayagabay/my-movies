@@ -1,6 +1,7 @@
 <style>
 #infoMiniTitle{
 text-align:center;
+padding:10px;
 }
 </style>
 <h2>
@@ -53,7 +54,7 @@ text-align:center;
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title" id="exampleModalLabel">{{movie.Title | titlecase}}, <h5>{{movie.Year}}</h5></h4> 
+            <h4 class="modal-title" id="exampleModalLabel">{{movie.Title | titlecase}} <h5>{{movie.Year}}</h5></h4> 
               <p id="infoMiniTitle"><span style="text-decoration: underline;">Runtime:</span><br/>{{movie.Runtime}}</p>
               <p id="infoMiniTitle"><span style="text-decoration: underline;">Genre:</span><br/>{{movie.Genre}}</p>
               <p id="infoMiniTitle"><span style="text-decoration: underline;">Director:</span><br/>{{movie.Director}}</p>
