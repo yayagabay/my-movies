@@ -42,7 +42,7 @@ export class DataService {
     this.http.get(`${this.API_URI}/movies/checkexist/${id}`)
     .subscribe(
       res => {
-        console.log(res);
+        console.log(res.toString);
         // this.getMovies();
         // this.router.navigate(['/home']);
           },
