@@ -47,15 +47,7 @@ export class DataService {
 
         // this.getMovies();
         // this.router.navigate(['/home']);
-          },
-          err => {
-            this.errorMsg.message="This movie exist in my movie!";
-            // this.getMovies();
-            // this.router.navigate(['/home']);
-            // console.error(err);
-            // console.log("This movie already in my movie!"
-          }
-          )
+          })
           return this.errorMsg;
 
   }
