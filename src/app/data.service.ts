@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Movie } from './models/Movie';
 import { Observable , pipe } from 'rxjs';
 import { map } from "rxjs/operators";
@@ -31,8 +31,12 @@ export class DataService {
 
   constructor(private http: HttpClient,private router: Router) { }
 
-  getMovies(){
-    return this.http.get<Movie[]>(`${this.API_URI}/movies`);
+  getMovies() : Observable<Movie[]>{
+    return this.http.get<Movie[]>(`${this.API_URI}/movies`)
+    .pipe(RTCError((err: HttpErrorResponse) =>{
+
+    }
+    ));
   }
 
   getMovie(id: String) {
