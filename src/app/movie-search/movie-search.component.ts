@@ -45,6 +45,9 @@ export class MovieSearchComponent implements OnInit {
         this.dataService.getMovieFromOmdb(id).subscribe(
             res => {
              this.dataService.saveMovie(res,id);
+        },
+        err =>{
+          this.errorMsg=err;
         })
       }
       }   

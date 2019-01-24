@@ -32,11 +32,7 @@ export class DataService {
   constructor(private http: HttpClient,private router: Router) { }
 
   getMovies() : Observable<Movie[]>{
-    return this.http.get<Movie[]>(`${this.API_URI}/movies`)
-    .pipe(RTCError((err: HttpErrorResponse) =>{
-
-    }
-    ));
+    return this.http.get<Movie[]>(`${this.API_URI}/movies`);
   }
 
   getMovie(id: String) {
