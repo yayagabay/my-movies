@@ -14,19 +14,52 @@ body {
     float:left;
 }
 .centered {
+    opacity:1;
     font-size: 15px;
-    position: absolute;
+    position: relative;
     top: 0;
-    color: #ffffff;
+    color: #000000;
     font-weight: bold;
     width: 100%;
-    box-shadow: 0px 2px 0px 0px #212121;
-    height: 25%;
-    background-color: #001a3adb;
-    /* border-radius: 25px; */
+    box-shadow: -3px 3px 0px 0px black;
+    height: 50px;
+    /* background-color: #001a3adb; */
+    border-radius: 25px;
     text-align: center;
     padding: 5px;
+    margin-bottom: 5px;
   }
+  .actionOne{
+        transition: .5s ease;
+        opacity: 0;
+        position: absolute;
+        top: 70%;
+        left: 20%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
+      }
+      .actionTwo{
+        transition: .5s ease;
+        opacity: 0;
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
+      }
+
+      .actionThree{
+        transition: .5s ease;
+        opacity: 0;
+        position: absolute;
+        top: 70%;
+        left: 80%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
+      }
   .card-body{
       padding:0.5rem;
   }
@@ -83,3 +116,69 @@ h2{
    }
 }
 
+//Hover on image:
+img:hover{
+ opacity:0.7;   
+}
+.container {
+    position: relative;
+    width: 50%;
+  }
+  .image{
+    opacity: 1;
+    display: block;
+    width: 100%;
+    max-width:100%;
+    min-width:100px;
+    height: 200px;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+  
+  .middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .text-center:hover .image {
+    opacity: 0.8;
+  }
+  
+  .text-center:hover .middle {
+    opacity: 1;
+  }
+  .text-center:hover .actionOne {
+    opacity: 1;
+  }
+  .text-center:hover .actionTwo {
+    opacity: 1;
+  }
+  .text-center:hover .actionThree {
+    opacity: 1;
+  }
+  .text-center:hover .centered {
+    box-shadow: -3px 3px 0px 0px #00a8ff;
+  }
+  
+  .text {
+    color: white;
+    font-size: 10px;
+    padding: 16px 32px;
+  }
+
+//Mobile:
+@media screen and (max-device-width: 480px) {
+    #showAlert{
+        font-size: 10px;
+    }
+.text-center{
+    max-width: 100%;
+    min-width: 150px;
+}
+}

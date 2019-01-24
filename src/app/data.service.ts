@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Movie } from './models/Movie';
-import { Observable , pipe } from 'rxjs';
+import { Observable, pipe } from 'rxjs';
 import { map } from "rxjs/operators";
 import moviesController from 'server/src/controllers/moviesController';
 import { TypeaheadOptions } from 'ngx-bootstrap';
@@ -21,15 +21,20 @@ export class DataService {
     Poster: '',
     Imdbid: ''
   };
-  ID:String;
-  exist:Boolean;
+  ID: String;
+  exist: Boolean;
+
   // private _url: string = "/assets/data/movies.json";
+
+  //PROD
   API_URI = '/api';
+  //DEV
+  // API_URI = 'http://localhost:5000/api';
   errorMsg: any = [];
 
-  constructor(private http: HttpClient,private router: Router) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
-  getMovies() : Observable<Movie[]>{
+  getMovies(): Observable<Movie[]> {
     return this.http.get<Movie[]>(`${this.API_URI}/movies`);
   }
 
@@ -37,19 +42,19 @@ export class DataService {
     return this.http.get(`${this.API_URI}/movies/${id}`);
   }
 
-  checkExist(id: String): string{
-    this.ID=id;
+  checkExist(id: String): string {
+    this.ID = id;
     console.log(id);
     this.http.get(`${this.API_URI}/movies/checkexist/${id}`)
-    .subscribe(
-      res => {
-        console.log(res);
-        this.errorMsg.messeage="good";
+      .subscribe(
+        res => {
+          console.log(res);
+          this.errorMsg.messeage = "good";
 
-        // this.getMovies();
-        // this.router.navigate(['/home']);
-          })
-          return this.errorMsg;
+          // this.getMovies();
+          // this.router.navigate(['/home']);
+        })
+    return this.errorMsg;
 
   }
 
@@ -58,44 +63,44 @@ export class DataService {
     return this.http.delete(`${this.API_URI}/movies/${id}`);
   }
 
-saveMovie(string,id) {
-    let m:Movie = <Movie>JSON.stringify(string);
+  saveMovie(string, id) {
+    let m: Movie = <Movie>JSON.stringify(string);
     //  console.log(string);
-     this.movie.Title=string.Title.replace(/[^a-zA-Z ]/g, "");
-     this.movie.Year=string.Year;
-     this.movie.Runtime=string.Runtime;
-     this.movie.Genre=string.Genre;
-     this.movie.Director=string.Director;
-     this.movie.Poster=string.Poster;
-     this.movie.Imdbid=id;
+    this.movie.Title = string.Title.replace(/[^a-zA-Z ]/g, "");
+    this.movie.Year = string.Year;
+    this.movie.Runtime = string.Runtime;
+    this.movie.Genre = string.Genre;
+    this.movie.Director = string.Director;
+    this.movie.Poster = string.Poster;
+    this.movie.Imdbid = id;
     //  console.log(this.movie);
-     this.http.post(`${this.API_URI}/movies`,this.movie)
-     .subscribe(
-       res => {
-            //  console.log(res);
-            this.getMovies();
-            this.router.navigate(['/home']);
-            
-          },
-           err => {
-            console.error(err);
-           this.getMovies();
-           this.router.navigate(['/home']);
-           }
-         )
-    } 
-      
+    this.http.post(`${this.API_URI}/movies`, this.movie)
+      .subscribe(
+        res => {
+          //  console.log(res);
+          this.getMovies();
+          this.router.navigate(['/home']);
 
-  updateMovie(id: String|number, updatedMovie: Movie): Observable<Movie> {
+        },
+        err => {
+          console.error(err);
+          this.getMovies();
+          this.router.navigate(['/home']);
+        }
+      )
+  }
+
+
+  updateMovie(id: String | number, updatedMovie: Movie): Observable<Movie> {
     return this.http.put(`${this.API_URI}/movies/${id}`, updatedMovie);
   }
 
 
-  getMovieFromOmdb(id: String): Observable<Movie[]>{
+  getMovieFromOmdb(id: String): Observable<Movie[]> {
     return this.http.get<Movie[]>(`https://www.omdbapi.com/?i=${id}&apikey=a83332e8`);
   }
 
-  searchMovieByTitle(title: String): Observable<Movie[]>{
+  searchMovieByTitle(title: String): Observable<Movie[]> {
     return this.http.get<Movie[]>(`https://www.omdbapi.com/?s=${title}&apikey=a83332e8`);
   }
 
