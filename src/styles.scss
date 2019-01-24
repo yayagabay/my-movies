@@ -173,6 +173,18 @@ img:hover{
 
 //Mobile:
 @media screen and (max-device-width: 480px) {
+    .text-center .middle {
+        opacity: 1;
+      }
+      .text-center .actionOne {
+        opacity: 1;
+      }
+      .text-center .actionTwo {
+        opacity: 1;
+      }
+      .text-center .actionThree {
+        opacity: 1;
+      }
     i{
         font-size:10px;
     }
