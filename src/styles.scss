@@ -173,6 +173,9 @@ img:hover{
 
 //Mobile:
 @media screen and (max-device-width: 480px) {
+    i{
+        font-size:10px;
+    }
     #showAlert{
         font-size: 10px;
     }
