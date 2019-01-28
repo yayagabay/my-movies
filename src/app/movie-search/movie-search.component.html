@@ -14,9 +14,12 @@
       <img [src] class="image rounded" [src]="movie.Poster">
       <div class="middle">
         <div (click)="addMovie(movie.imdbID)" class="text">
-          <a id="showAlert" style="color:white;" class="text btn btn-info btn-block">
+            <i style="color:white;" class="btn btn-success material-icons"  data-toggle="modal" data-target="#movieInfo">
+            add
+          </i>
+          <!-- <a id="showAlert" style="color:white;" class="text btn btn-info btn-block">
             ADD
-          </a>
+          </a> -->
         </div>
       </div>
     </div>

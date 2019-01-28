@@ -17,16 +17,12 @@ body {
     font-size: 15px;
     position: relative;
     top: 0;
-    color: #000000;
     font-weight: bold;
     width: 100%;
-    box-shadow: -3px 3px 0px 0px black;
-    height: 50px;
+     height: 50px;
     /* background-color: #001a3adb; */
     border-radius: 25px;
     text-align: center;
-    padding: 5px;
-    margin-bottom: 5px;
   }
   .actionOne{
         transition: .5s ease;
@@ -37,6 +33,7 @@ body {
         transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
         text-align: center;
+        max-width:350px;
       }
       .actionTwo{
         transition: .5s ease;
@@ -117,17 +114,17 @@ h2{
 
 //Hover on image:
 img:hover{
- opacity:0.7;   
+ opacity:01;   
 }
 .container {
     position: relative;
     width: 50%;
   }
   .image{
-    opacity: 1;
+    opacity: 0.6;
     display: block;
     width: 100%;
-    max-width:100%;
+    max-width:350px;
     min-width:100px;
     height: 200px;
     transition: .5s ease;
@@ -162,7 +159,8 @@ img:hover{
     opacity: 1;
   }
   .text-center:hover .centered {
-    box-shadow: -4px 4px 0px 0px #00a8ff;
+    font-size:17px;
+    color:black;
   }
   
   .text {
