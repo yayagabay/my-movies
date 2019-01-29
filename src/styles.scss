@@ -207,7 +207,7 @@ img:hover{
 
 
 
-@media screen and (min-width: 1820px) {
+@media screen and (min-width: 1800px) {
     .actionOne{
         left: 20%;
       }
@@ -216,5 +216,11 @@ img:hover{
       }
       .actionThree{
         left: 70%;
+      }
+
+      .middle {
+        top: 55%;
+        left: 45%;
+
       }
 }
