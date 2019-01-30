@@ -105,7 +105,7 @@ padding:10px;
 <div style="margin-top:10px;" class="col-md-3" *ngFor="let movie of movies">
   <div class="text-center">
     <div>
-      <div class="centered"> {{movie.Title | titlecase}}, {{movie.Year}} </div>
+      <span id="title" href="#" class="effect-underline">{{movie.Title | titlecase}}, {{movie.Year}}</span>
       <img [src] class="image rounded" [src]="movie.Poster">
       <div class="text">
         <div class="actionOne">

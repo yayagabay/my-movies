@@ -28,10 +28,10 @@ export class DataService {
   movies: any = [];
 
   //PROD
-  API_URI = '/api';
+  // API_URI = '/api';
 
   //DEV
-  // API_URI = 'http://localhost:5000/api';
+  API_URI = 'http://localhost:5000/api';
 
 
   errorMsg: any = [];

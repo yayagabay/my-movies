@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import url(https://fonts.googleapis.com/css?family=Dosis:300,400);
 
 body {
     margin: 0;
@@ -67,6 +68,9 @@ body {
 }
 h2{
     color: black;
+    font-size:3em;
+    font-family: 'Dosis', sans-serif;
+
 }
 
 #icon{
@@ -162,7 +166,7 @@ img:hover{
     opacity: 1;
   }
   .text-center:hover .centered {
-    font-size:17px;
+    font-size:16px;
     color:black;
     font-weight: bold;
   }
@@ -234,3 +238,59 @@ img:hover{
     text-align:center;
     margin-top:5px;
 }
+
+
+@import url(https://fonts.googleapis.com/css?family=Dosis:300,400);
+
+  
+  #title {
+    color: black;
+    font-size: 15px;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 10px;
+    height:40px;
+    font-family: 'Dosis', sans-serif;
+  }
+  
+  /*effect-underline*/
+  .text-center #title.effect-underline:after {
+      content: '';
+    position: absolute;
+    left: 0;
+    color:#000000;
+    display: inline-block;
+    height: 1em;
+    width: 100%;
+    border-bottom: 2px dashed;
+        margin-top: 10px;
+    opacity: 0;
+      -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+      transition: opacity 0.35s, transform 0.35s;
+      -webkit-transform: scale(0,1);
+      transform: scale(0,1);
+  }
+
+  .text-center:hover #title.effect-underline:after {
+    opacity: 1;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+  }
+  
+
+  
+  @-webkit-keyframes shine {
+    from {
+      -webkit-mask-position: 150%;
+    }
+    
+    to {
+      -webkit-mask-position: -50%;
+    }
+  }
+
+  .modal-title{
+    font-family: 'Dosis', sans-serif;
+
+  }
