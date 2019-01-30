@@ -17,10 +17,8 @@ body {
     font-size: 15px;
     position: relative;
     top: 0;
-    font-weight: bold;
     width: 100%;
-     height: 50px;
-    /* background-color: #001a3adb; */
+    height: 50px;
     border-radius: 25px;
     text-align: center;
     max-width:350px;
@@ -166,6 +164,7 @@ img:hover{
   .text-center:hover .centered {
     font-size:17px;
     color:black;
+    font-weight: bold;
   }
   
   .text {
@@ -189,7 +188,7 @@ img:hover{
         opacity: 1;
       }
       #icon{
-        font-size:1em;
+        font-size:1.5em;
       }
 
     p{
