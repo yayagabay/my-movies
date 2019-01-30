@@ -14,6 +14,7 @@ class MoviesRoutes {
         this.router.get('/', moviesController_1.default.list);
         this.router.get('/:id', moviesController_1.default.getOne);
         this.router.get('/checkexist/:id', moviesController_1.default.checkExist);
+        this.router.get('/checktitle/:id', moviesController_1.default.checkTitle);
         this.router.post('/', moviesController_1.default.create);
         this.router.put('/:id', moviesController_1.default.update);
         this.router.delete('/:id', moviesController_1.default.delete);

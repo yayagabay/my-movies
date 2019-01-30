@@ -46,6 +46,19 @@ class MoviesController {
             res.json({ message: 'good' });
         });
     }
+
+    checkTitle(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id } = req.params;
+            const movies = yield database_1.default.query('SELECT * FROM movies WHERE Title = ?', [id]);
+            console.log(movies.length);
+            if (movies.length > 0) {
+                res.status(404).json({ text: "The movie exits" });
+            }
+            res.json({ message: 'good' });
+        });
+    }
+
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             console.log(req.body);

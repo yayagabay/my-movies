@@ -23,6 +23,7 @@ export class DataService {
     Imdbid: ''
   };
   ID: String;
+  Title: String;
   exist: Boolean;
   movies: any = [];
 
@@ -63,6 +64,13 @@ export class DataService {
     .pipe(catchError(this.errorHandler));
 
   }
+  checkTitle(title: String) {
+    this.Title = title;
+    console.log(title);
+    return this.http.get(`${this.API_URI}/movies/checktitle/${title}`)
+    .pipe(catchError(this.errorHandler));
+
+  }
 
 
   deleteMovie(id: String) {
@@ -98,7 +106,8 @@ export class DataService {
 
 
   updateMovie(id: String | number, updatedMovie: Movie): Observable<Movie> {
-    return this.http.put(`${this.API_URI}/movies/${id}`, updatedMovie);
+    return this.http.put(`${this.API_URI}/movies/${id}`, updatedMovie)
+    .pipe(catchError(this.errorHandler));
   }
 
 

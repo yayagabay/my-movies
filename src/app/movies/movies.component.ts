@@ -21,16 +21,20 @@ export class MoviesComponent implements OnInit {
   };
   ID:string;
   errorMsg: any = [];
+  showAlert=false;
+  
+
+
 
   constructor(private dataService: DataService,private router: Router) { 
-
-  }
-  log(x){
-    console.log(x);
   }
 
   ngOnInit() {
       this.getMovies();
+  }
+
+  log(x){
+    console.log(x);
   }
 
   getMovies(){
@@ -55,6 +59,13 @@ export class MoviesComponent implements OnInit {
   }
 
   updateMovie(movie:Movie) {
+    this.dataService.checkTitle(movie.Title).subscribe(
+      res => {
+      console.log(res)
+      },
+        err =>{this.errorMsg=err;
+          this.showAlert=true;});
+
     console.log(movie);
     movie.Imdbid=this.ID;
     movie.Title=movie.Title.replace(/[^a-zA-Z ]/g, "");
@@ -65,9 +76,10 @@ export class MoviesComponent implements OnInit {
           this.getMovies();
           this.router.navigate(['/home']);
         },
-        err => console.error(err)
+        err => {this.errorMsg=err;}
       )
   }
+
 
   deleteMovie(id: string) {
     console.log(id);

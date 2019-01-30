@@ -33,6 +33,16 @@ class MoviesController {
         res.json({ message: 'good' });
     }
 
+    public async checkTitle(req: Request, res: Response): Promise<any> {
+        const { id } = req.params;
+        const movies = await pool.query('SELECT * FROM movies WHERE Title = ?', [id]);
+        console.log(movies.length);
+        if (movies.length > 0) {
+            res.status(404).json({ text: "The movie exits" });
+        }
+        res.json({ message: 'good' });
+    }
+
     public async create(req: Request, res: Response): Promise<void> {
         console.log(req.body)
         const result = await pool.query('INSERT INTO movies set ?', [req.body]);
