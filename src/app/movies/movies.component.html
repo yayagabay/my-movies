@@ -109,19 +109,19 @@ padding:10px;
       <img [src] class="image rounded" [src]="movie.Poster">
       <div class="text">
         <div class="actionOne">
-          <i style="color:white;" class="btn btn-info material-icons" data-toggle="modal" data-target="#movieInfo"
+          <i id="icon" class="btn btn-info material-icons" data-toggle="modal" data-target="#movieInfo"
             (click)="getMovie(movie.ID)">
             info
           </i>
         </div>
         <div class="actionTwo">
-          <i style="color:white;" class="btn btn-warning material-icons" data-toggle="modal" data-target="#myModal"
+          <i id="icon" class="btn btn-warning material-icons" data-toggle="modal" data-target="#myModal"
             (click)="getMovie(movie.ID)">
             create
           </i>
         </div>
         <div class="actionThree">
-          <i style="color:white;" class="btn btn-danger material-icons" data-toggle="modal" data-target="#deleteMovie"
+          <i id="icon" class="btn btn-danger material-icons" data-toggle="modal" data-target="#deleteMovie"
             (click)="getMovie(movie.ID)">
             delete
           </i>

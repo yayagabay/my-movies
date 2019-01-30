@@ -71,6 +71,10 @@ h2{
     color: black;
 }
 
+#icon{
+    color:white;
+    font-size:3em;
+}
 #container {
    display: grid;
    grid-template-columns: 70px auto;
@@ -170,7 +174,7 @@ img:hover{
     padding: 16px 32px;
   }
 
-//Mobile:
+//Mobile to small screens:
 @media screen and (max-device-width: 480px) {
     .text-center .middle {
         opacity: 1;
@@ -184,9 +188,10 @@ img:hover{
       .text-center .actionThree {
         opacity: 1;
       }
-    i{
-        font-size:10px;
-    }
+      #icon{
+        font-size:1em;
+      }
+
     p{
         font-size:10px;
     }
@@ -206,7 +211,7 @@ img:hover{
 }
 
 
-
+//Mobile to large screens
 @media screen and (min-width: 1800px) {
     .actionOne{
         left: 20%;
