@@ -26,22 +26,35 @@ export class MovieSearchComponent implements OnInit {
   title: string;
   results: Object;
   errorMsg: any = [];
+  showAlert=false;
+  
+
+  toggleAlert(){
+    this.showAlert=!this.showAlert;
+
+  }
 
   searchMovie(title: String){
-    this.dataService.searchMovieByTitle(title).subscribe(data => this.movies = data);
-    console.log(this.movies);
+    this.dataService.searchMovieByTitle(title)
+    .subscribe(
+      res => {this.movies = res});
   }
 
   constructor(private dataService: DataService, private activatedRoute: ActivatedRoute,private router: Router) { }
 
   ngOnInit() {
-    this.dataService.getMovies().subscribe(
-      res => this.movies = res);
   }
 
 
 
   addMovie(id){  
+    this.dataService.checkExist(id).subscribe(
+      res => {
+      console.log(res)
+      },
+        err =>{this.errorMsg=err;});
+
+        
         this.dataService.getMovieFromOmdb(id).subscribe(
             res => {
              this.dataService.saveMovie(res,id);

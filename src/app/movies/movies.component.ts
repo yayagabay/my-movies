@@ -20,6 +20,8 @@ export class MoviesComponent implements OnInit {
     Imdbid: ''
   };
   ID:string;
+  errorMsg: any = [];
+
   constructor(private dataService: DataService,private router: Router) { 
 
   }
@@ -36,8 +38,8 @@ export class MoviesComponent implements OnInit {
       res => {
         this.movies=res;
       },
-      err => console.error(err)
-      );
+      err => {this.errorMsg=err;}
+      )
   }
 
   getMovie(id: string) {

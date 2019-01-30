@@ -7,7 +7,11 @@ class MoviesController {
 
     public async list(req: Request, res: Response): Promise<void> {
         const movies = await pool.query('SELECT * FROM movies');
-        res.json(movies);
+        if(movies.length>0){
+            res.json(movies);
+        }else{
+            res.status(404).json({ text: "There is no movies, Try again!" });
+        }
     }
 
     public async getOne(req: Request, res: Response): Promise<any> {

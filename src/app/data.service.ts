@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Movie } from './models/Movie';
-import { Observable, pipe } from 'rxjs';
-import { map } from "rxjs/operators";
 import moviesController from 'server/src/controllers/moviesController';
 import { TypeaheadOptions } from 'ngx-bootstrap';
 import { Router, ActivatedRoute } from '@angular/router';
-// import { Observable } from 'rxjs/Observable';
+import { filter, catchError, mergeMap,map } from 'rxjs/operators';
+import { errorHandler } from '@angular/platform-browser/src/browser';
+import { of, throwError as observableThrowError,Observable, pipe, observable  } from "rxjs"
+
 
 @Injectable({
   providedIn: 'root'
@@ -23,38 +24,43 @@ export class DataService {
   };
   ID: String;
   exist: Boolean;
-
-  // private _url: string = "/assets/data/movies.json";
+  movies: any = [];
 
   //PROD
   API_URI = '/api';
+
   //DEV
   // API_URI = 'http://localhost:5000/api';
+
+
   errorMsg: any = [];
 
   constructor(private http: HttpClient, private router: Router) { }
 
   getMovies(): Observable<Movie[]> {
-    return this.http.get<Movie[]>(`${this.API_URI}/movies`);
+    return this.http.get<Movie[]>(`${this.API_URI}/movies`)
+    .pipe(catchError(this.errorHandler));
+  }
+
+  errorHandler(errorResponse: HttpErrorResponse){
+    if(errorResponse.error instanceof ErrorEvent){
+      console.error('client side error: ' , errorResponse.error.message);
+      return observableThrowError(errorResponse.message || "Client error");
+    }else{
+      console.error('server side error: ' , errorResponse);
+      return observableThrowError(errorResponse || "Server error");
+    }
   }
 
   getMovie(id: String) {
     return this.http.get(`${this.API_URI}/movies/${id}`);
   }
 
-  checkExist(id: String): string {
+  checkExist(id: String) {
     this.ID = id;
     console.log(id);
-    this.http.get(`${this.API_URI}/movies/checkexist/${id}`)
-      .subscribe(
-        res => {
-          console.log(res);
-          this.errorMsg.messeage = "good";
-
-          // this.getMovies();
-          // this.router.navigate(['/home']);
-        })
-    return this.errorMsg;
+    return this.http.get(`${this.API_URI}/movies/checkexist/${id}`)
+    .pipe(catchError(this.errorHandler));
 
   }
 
@@ -102,7 +108,5 @@ export class DataService {
 
   searchMovieByTitle(title: String): Observable<Movie[]> {
     return this.http.get<Movie[]>(`https://www.omdbapi.com/?s=${title}&apikey=a83332e8`);
-  }
-
-
+    }
 }

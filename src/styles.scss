@@ -115,14 +115,14 @@ h2{
 
 //Hover on image:
 img:hover{
- opacity:01;   
+ opacity:1;   
 }
 .container {
     position: relative;
     width: 50%;
   }
   .image{
-    opacity: 0.6;
+    opacity: 0.5;
     display: block;
     width: 100%;
     max-width:350px;
@@ -223,4 +223,10 @@ img:hover{
         left: 45%;
 
       }
+}
+
+.alert{
+    color:black;
+    text-align:center;
+    margin-top:5px;
 }

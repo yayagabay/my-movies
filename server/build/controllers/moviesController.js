@@ -16,7 +16,11 @@ class MoviesController {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const movies = yield database_1.default.query('SELECT * FROM movies');
-            res.json(movies);
+            if(movies.length>0){
+                res.json(movies);
+            }else{
+                res.status(404).json({ text: "There is no movies, Try again!" });
+            }
         });
     }
     getOne(req, res) {
