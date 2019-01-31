@@ -48,7 +48,7 @@ export class MovieSearchComponent implements OnInit {
       console.log(res)
       },
         err =>{this.errorMsg=err;
-          this.showAlert=true;});
+          this.showAlert=!this.showAlert;});
 
         
         this.dataService.getMovieFromOmdb(id).subscribe(
