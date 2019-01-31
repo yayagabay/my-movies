@@ -233,6 +233,17 @@ img:hover{
       }
 }
 
+@media screen and (min-width:1280px){
+    #title{
+        height:60px;
+    }
+}
+
+@media screen and (max-width:1080px){
+    #title{
+        font-size:13px;
+    }
+}
 .alert{
     color:black;
     text-align:center;
