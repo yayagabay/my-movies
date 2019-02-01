@@ -244,7 +244,9 @@ img:hover{
 @media screen and (max-device-width:1080px){
     #title{
         font-size:13px;
+        height:60px;
     }
+
 }
 .alert{
     color:black;
@@ -262,6 +264,7 @@ img:hover{
     text-decoration: none;
     display: inline-block;
     position: relative;
+    margin-bottom: 10px;
     height:30px;
     font-family: 'Dosis', sans-serif;
   }
