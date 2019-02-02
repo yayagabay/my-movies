@@ -64,7 +64,7 @@ body {
     font-weight: bolder;
     color: black;
     text-decoration: underline;
-    font-size: 1em;
+    font-size: 1vw;
     font-family: 'Montserrat', sans-serif;
 }
 h2{
@@ -214,13 +214,6 @@ img:hover{
 }
 }
 
-
-//Mobile to large screens
-@media screen and (min-width: 1800px) {
-   #title{
-       font-size:14px;
-   }
-}
 
 // @media screen and (min-width:1280px){
 //     #title{
