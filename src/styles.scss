@@ -70,13 +70,6 @@ body {
     height:50px;
     font-family: 'Montserrat', sans-serif;
 }
-// #title{
-//     font-weight: bolder;
-//     color: black;
-//     text-decoration: underline;
-//     font-size: 1vw;
-//     font-family: 'Montserrat', sans-serif;
-// }
 h2{
     color: black;
     font-size:3em;
@@ -86,7 +79,7 @@ h2{
 
 #icon{
     color:white;
-    font-size:1.5vw;
+    font-size:2em;
 }
 #container {
    display: grid;
@@ -249,6 +242,7 @@ img:hover{
 
 @import url(https://fonts.googleapis.com/css?family=Dosis:300,400);
 
+  
   
   /*effect-underline*/
   .text-center #title.effect-underline:after {
