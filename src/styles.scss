@@ -213,6 +213,30 @@ img:hover{
     min-width: 150px;
 }
 }
+
+
+//Mobile to large screens
+@media screen and (min-width: 1800px) {
+   #title{
+       font-size:14px;
+   }
+}
+
+// @media screen and (min-width:1280px){
+//     #title{
+//         height:60px;
+//         font-size:17px;
+//         max-width:300px;
+//     }
+// }
+
+// @media screen and (max-device-width:1080px){
+//     #title{
+//         font-size:13px;
+//         height:60px;
+//     }
+
+// }
 .alert{
     color:black;
     text-align:center;
