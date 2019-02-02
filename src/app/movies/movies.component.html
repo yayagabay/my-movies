@@ -8,6 +8,10 @@ padding:10px;
   My Movies
 </h2>
 
+
+
+
+
 <div id="alert" *ngIf="showAlert" class="alert alert-danger alert-dismissible fade show" role="alert">
     {{errorMsg.error.text}}
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -102,7 +106,7 @@ padding:10px;
   </div>
 </div>
 
-<div style="margin-top:10px;" class="col-md-3" *ngFor="let movie of movies">
+<div style="margin-top:10px;" class="col-md-2" *ngFor="let movie of movies">
   <div class="text-center">
     <div>
       <span id="title" href="#" class="effect-underline">{{movie.Title | titlecase}}, {{movie.Year}}</span>

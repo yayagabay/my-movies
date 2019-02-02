@@ -10,8 +10,9 @@ body {
 .card-img-top{
     height:200px;
 }
-.col-md-3{
+.col-md-2{
     float:left;
+    max-width:20%;
 }
 .centered {
     opacity:1;
@@ -75,7 +76,7 @@ h2{
 
 #icon{
     color:white;
-    font-size:3em;
+    font-size:2em;
 }
 #container {
    display: grid;
@@ -142,7 +143,7 @@ img:hover{
     transition: .5s ease;
     opacity: 0;
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -233,21 +234,21 @@ img:hover{
       }
 }
 
-@media screen and (min-width:1280px){
-    #title{
-        height:60px;
-        font-size:17px;
-        max-width:300px;
-    }
-}
+// @media screen and (min-width:1280px){
+//     #title{
+//         height:60px;
+//         font-size:17px;
+//         max-width:300px;
+//     }
+// }
 
-@media screen and (max-device-width:1080px){
-    #title{
-        font-size:13px;
-        height:60px;
-    }
+// @media screen and (max-device-width:1080px){
+//     #title{
+//         font-size:13px;
+//         height:60px;
+//     }
 
-}
+// }
 .alert{
     color:black;
     text-align:center;
@@ -265,7 +266,7 @@ img:hover{
     display: inline-block;
     position: relative;
     margin-bottom: 10px;
-    height:30px;
+    height:50px;
     font-family: 'Dosis', sans-serif;
   }
   

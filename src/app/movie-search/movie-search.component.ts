@@ -46,18 +46,19 @@ export class MovieSearchComponent implements OnInit {
     this.dataService.checkExist(id).subscribe(
       res => {
       console.log(res)
+      this.dataService.getMovieFromOmdb(id).subscribe(
+        res => {
+         this.dataService.saveMovie(res,id);
+    },
+    err =>{
+      this.errorMsg=err;
+    })
       },
         err =>{this.errorMsg=err;
-          this.showAlert=true,3000;});
+        this.showAlert=true;});
 
         
-        this.dataService.getMovieFromOmdb(id).subscribe(
-            res => {
-             this.dataService.saveMovie(res,id);
-        },
-        err =>{
-          this.errorMsg=err;
-        })
+       
       }
       }   
     

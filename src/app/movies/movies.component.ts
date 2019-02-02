@@ -22,7 +22,7 @@ export class MoviesComponent implements OnInit {
   ID:string;
   errorMsg: any = [];
   showAlert=false;
-  
+
 
 
 
@@ -59,6 +59,7 @@ export class MoviesComponent implements OnInit {
   }
 
   updateMovie(movie:Movie) {
+
     this.dataService.checkTitle(movie.Title).subscribe(
       res => {
       console.log(res)
