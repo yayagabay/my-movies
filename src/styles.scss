@@ -226,13 +226,15 @@ img:hover{
 //     }
 // }
 
-// @media screen and (max-device-width:1080px){
-//     #title{
-//         font-size:13px;
-//         height:60px;
-//     }
+@media screen and (max-device-width:1080px){
+    #title{
+        font-size:13px;
+    }
+    #icon{
+        font-size:1vw;
+    }
 
-// }
+}
 .alert{
     color:black;
     text-align:center;
