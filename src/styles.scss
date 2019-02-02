@@ -62,7 +62,7 @@ body {
   }
   #title {
     color: black;
-    font-size: 1vw;
+    font-size: calc(10px+0.2vw);
     text-decoration: none;
     display: inline-block;
     position: relative;
