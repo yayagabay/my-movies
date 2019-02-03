@@ -230,6 +230,9 @@ img:hover{
     .centered{
         font-size:12px;
     }
+    #title{
+        height:100%;
+    }
 .text-center{
     max-width: 100%;
     min-width: 150px;
@@ -248,6 +251,7 @@ img:hover{
 @media screen and (max-device-width:1080px){
     #title{
         font-size:13px;
+
     }
     #icon{
         font-size:1vw;
