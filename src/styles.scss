@@ -77,6 +77,7 @@ body {
     display: inline-block;
     position: relative;
     margin-bottom: 10px;
+    height:30px;
     font-family: 'Montserrat', sans-serif;
 }
 h2{
@@ -204,6 +205,7 @@ img:hover{
       .text-center .actionThree {
         opacity: 1;
       }
+
       #icon{
         font-size:1em;
       }
@@ -278,6 +280,9 @@ img:hover{
       -webkit-transform: scale(1);
       transform: scale(1);
   }
+  .text-center:hover #title {
+    font-weight: bold;
+}
   
 
   
