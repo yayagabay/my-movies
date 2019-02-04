@@ -5,7 +5,7 @@ import { Movie } from '../models/Movie';
 import { Router, ActivatedRoute } from '@angular/router';
 import { tap, catchError } from 'rxjs/operators';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
-
+import { TruncateModule } from 'ng2-truncate';
 
 @Component({
   selector: 'app-movie-search',

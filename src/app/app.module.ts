@@ -16,6 +16,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { DataService } from './data.service';
 import { TodoComponent } from './todo/todo.component';
+import { TruncateModule } from 'ng2-truncate';
 
 
 
@@ -36,7 +37,8 @@ import { TodoComponent } from './todo/todo.component';
     BrowserAnimationsModule,
     AlertModule.forRoot(),
     FormsModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    TruncateModule
   ],
   providers: [
     DataService
