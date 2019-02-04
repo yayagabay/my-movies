@@ -15,7 +15,7 @@
 <div style="margin-top:10px;" class="col-md-2" *ngFor="let movie of movies.Search">
   <div class="text-center">
     <div>
-        <span id="title" href="#" class="effect-underline">{{movie.Title | titlecase}} </span>
+        <span id="title" href="#" class="effect-underline">{{movie.Title | limitTo:10 | titlecase}} </span>
       <img [src] class="image rounded" [src]="movie.Poster">
       <div class="middle">
         <div id="add" (click)="addMovie(movie.imdbID)" class="text">
