@@ -59,26 +59,24 @@ export class MoviesComponent implements OnInit {
   }
 
   updateMovie(movie:Movie) {
-
     this.dataService.checkTitle(movie.Title).subscribe(
       res => {
-      console.log(res)
+      console.log(res);
+      console.log(movie);
+      movie.Imdbid=this.ID;
+      movie.Title=movie.Title.replace(/[^a-zA-Z ]/g, "");
+      this.dataService.updateMovie(this.ID, movie)
+        .subscribe(
+          res => { 
+            console.log(res);
+            this.getMovies();
+            this.router.navigate(['/home']);
+          },
+          err => {this.errorMsg=err;}
+        )
       },
         err =>{this.errorMsg=err;
           this.showAlert=true;});
-
-    console.log(movie);
-    movie.Imdbid=this.ID;
-    movie.Title=movie.Title.replace(/[^a-zA-Z ]/g, "");
-    this.dataService.updateMovie(this.ID, movie)
-      .subscribe(
-        res => { 
-          console.log(res);
-          this.getMovies();
-          this.router.navigate(['/home']);
-        },
-        err => {this.errorMsg=err;}
-      )
   }
 
 

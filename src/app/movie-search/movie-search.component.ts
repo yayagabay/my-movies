@@ -39,7 +39,7 @@ export class MovieSearchComponent implements OnInit {
     this.dataService.searchMovieByTitle(title)
     .subscribe(
       res => {this.movies = res;
-      console.log(res.length);
+      console.log(this.movies.length);
       });
   }
   
