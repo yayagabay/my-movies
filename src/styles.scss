@@ -15,19 +15,6 @@ body {
     max-width:300px;
 }
 
-@media screen and (min-width:780px){
-    .col-md-2{
-        float:left;
-        max-width:20%;
-    }
-    #title{
-        font-size:13px;
-    }
-    #icon{
-        font-size:1em;
-    }
-}
-
 
 .centered {
     opacity:1;
@@ -97,7 +84,6 @@ h2{
 
 #icon{
     color:white;
-    font-size:2em;
 }
 #container {
    display: grid;
@@ -241,13 +227,24 @@ img:hover{
 }
 
 
-// @media screen and (min-width:1280px){
-//     #title{
-//         height:60px;
-//         font-size:17px;
-//         max-width:300px;
-//     }
-// }
+@media screen and (min-width:780px){
+    .col-md-2{
+        float:left;
+        max-width:20%;
+    }
+    #title{
+        font-size:13px;
+    }
+    #icon{
+        font-size:1em;
+    }
+}
+
+@media screen and (min-width:1280px){
+    #icon{
+        font-size:2em
+    }
+}
 
 @media screen and (max-device-width:1080px){
     #title{
@@ -255,7 +252,7 @@ img:hover{
 
     }
     #icon{
-        font-size:1.5em;
+        font-size:1em;
     }
 
 }
