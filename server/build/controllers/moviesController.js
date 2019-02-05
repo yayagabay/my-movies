@@ -50,12 +50,18 @@ class MoviesController {
     checkTitle(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
+            const { id2 } = req.params;
+            const Title = yield database_1.default.query('SELECT Title FROM movies WHERE Imdbid = ?', [id2]);
             const movies = yield database_1.default.query('SELECT * FROM movies WHERE Title = ?', [id]);
             console.log(movies.length);
-            if (movies.length > 0) {
-                res.status(404).json({ text: "The movie exits" });
+            console.log(Title)
+            if (movies.length > 0 && Title[0].Title!=id)  {
+                // res.json({ message: Title });
+                // res.status(404).json({ "Title:" : Title[0].Title,"Id":id });
+                    res.status(404).json({ text: "The movie exits" });
+            }else{
+                res.json({ message: 'good' });
             }
-            res.json({ message: 'good' });
         });
     }
 

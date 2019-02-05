@@ -19,6 +19,15 @@ export class MoviesComponent implements OnInit {
     Poster: '',
     Imdbid: ''
   };
+  lastMovie: Movie = {
+    Title: '',
+    Year: 0,
+    Runtime: '',
+    Genre: '',
+    Director: '',
+    Poster: '',
+    Imdbid: ''
+  };
   ID:string;
   errorMsg: any = [];
   showAlert=false;
@@ -52,6 +61,7 @@ export class MoviesComponent implements OnInit {
         res => {
           console.log(res);
           this.movie =res;
+          this.lastMovie=res;
           this.ID=id;
         },
         err => console.error(err)
@@ -59,7 +69,17 @@ export class MoviesComponent implements OnInit {
   }
 
   updateMovie(movie:Movie) {
-      this.dataService.checkTitle(movie.Title).subscribe(
+
+    this.dataService.getMovie(movie.Imdbid)
+      .subscribe(
+        res => {
+          this.lastMovie=res;
+        },
+        err => console.error(err)
+      )
+
+
+      this.dataService.checkTitle(movie.Title,movie.Imdbid).subscribe(
         res => {
         console.log(res);
         console.log(movie);

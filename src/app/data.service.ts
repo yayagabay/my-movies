@@ -28,10 +28,10 @@ export class DataService {
   movies: any = [];
 
   //PROD
-  API_URI = '/api';
+  // API_URI = '/api';
 
   //DEV
-  // API_URI = 'http://localhost:5000/api';
+  API_URI = 'http://localhost:5000/api';
 
 
   errorMsg: any = [];
@@ -64,10 +64,12 @@ export class DataService {
     .pipe(catchError(this.errorHandler));
 
   }
-  checkTitle(title: String) {
+  checkTitle(title: String,id: String) {
+
     this.Title = title;
     console.log(title);
-    return this.http.get(`${this.API_URI}/movies/checktitle/${title}`)
+    console.log(id);
+    return this.http.get(`${this.API_URI}/movies/checktitle/${title}/${id}`)
     .pipe(catchError(this.errorHandler));
 
   }
