@@ -19,6 +19,15 @@ export class MoviesComponent implements OnInit {
     Poster: '',
     Imdbid: ''
   };
+  lastMovie: Movie = {
+    Title: '',
+    Year: 0,
+    Runtime: '',
+    Genre: '',
+    Director: '',
+    Poster: '',
+    Imdbid: ''
+  };
   ID:string;
   errorMsg: any = [];
   showAlert=false;
@@ -59,10 +68,36 @@ export class MoviesComponent implements OnInit {
   }
 
   updateMovie(movie:Movie) {
-    this.dataService.checkTitle(movie.Title).subscribe(
+    this.dataService.getMovie(movie.Imdbid)
+    .subscribe(
       res => {
-      console.log(res);
-      console.log(movie);
+        console.log(res);
+        this.lastMovie =res;
+      },
+      err => console.error(err)
+    )
+    console.log((this.lastMovie.Title==movie.Title));
+
+    if(this.lastMovie.Title!=movie.Title){
+      this.dataService.checkTitle(movie.Title).subscribe(
+        res => {
+        console.log(res);
+        console.log(movie);
+        movie.Imdbid=this.ID;
+        movie.Title=movie.Title.replace(/[^a-zA-Z ]/g, "");
+        this.dataService.updateMovie(this.ID, movie)
+          .subscribe(
+            res => { 
+              console.log(res);
+              this.getMovies();
+              this.router.navigate(['/home']);
+            },
+            err => {this.errorMsg=err;}
+          )
+        },
+          err =>{this.errorMsg=err;
+            this.showAlert=true;});
+    }else{
       movie.Imdbid=this.ID;
       movie.Title=movie.Title.replace(/[^a-zA-Z ]/g, "");
       this.dataService.updateMovie(this.ID, movie)
@@ -72,11 +107,8 @@ export class MoviesComponent implements OnInit {
             this.getMovies();
             this.router.navigate(['/home']);
           },
-          err => {this.errorMsg=err;}
-        )
-      },
-        err =>{this.errorMsg=err;
-          this.showAlert=true;});
+          err => {this.errorMsg=err;})
+    }
   }
 
 
